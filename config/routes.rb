@@ -1,6 +1,6 @@
 Myapp::Application.routes.draw do
   devise_for :users
-  get "home/index"
+  #get "home/index"
   root to: 'home#index'
   get   'kurs'        => 'home#kurs', as:"kurs"
   resources :questions, only: [:index, :create, :update, :delete, :new, :show]  do
