@@ -1,0 +1,112 @@
+<div class="wrapper row-offcanvas row-offcanvas-left">
+            <!-- Left side column. contains the logo and sidebar -->
+            <%= render "form/sidebar"%>
+
+            <!-- Right side column. Contains the navbar and content of the page -->
+            <aside class="right-side">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>
+                        <i class="ion ion-stats-bars"></i> Kurs BI
+                        <small>Berdasarkan mata uang</small>
+                    </h1>
+                </section>
+
+                <!-- Main content -->
+                <section class="content">
+                            <div class="box box-primary">
+                                <div class="box-header">
+                                    <h3 class="box-title">Mesin Pencari</h3>
+                                </div>
+                                <div class="box-body">
+                                    <!-- Date range -->
+                                    <div class="form-group">
+                                            <label>Mata Uang</label>
+                                            <select class="form-control">
+                                                <option value="AUD" >Dolar Australia</option><option value="BND" >Dolar Brunei D.</option><option value="CAD" >Dolar Canada</option><option value="CHF" >Franc Swiss</option><option value="DKK" >Kroner Denmark</option><option value="EUR" >EURO</option><option value="GBP" >Poundsterling Inggris</option><option value="HKD" >Dolar Hongkong</option><option value="JPY" >Yen Jepang</option><option value="MYR" >Ringgit Malaysia</option><option value="NOK" >Kroner Norwegia</option><option value="NZD" >Dolar Selandia Baru</option><option value="PHP" >Peso Philipina</option><option value="SEK" >Kroner Swedia</option><option value="SGD" >Dolar Singapura</option><option value="THB" >Baht Thailand</option><option value="USD" >Dolar Amerika Serikat</option><option value="PGK" >Kina Papua Nugini</option><option value="KRW" >Korean Won</option><option value="CNY" >Yuan China</option><option value="KWD" >Dinar Kuwait</option><option value="SAR" >Riyad Saudi Arabia</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Jenis</label>
+                                            <select class="form-control">
+                                                <option value="">Nilai Transaksi</option>
+                                                <option value="">Mata Uang Kertas</option>
+                                            </select>
+                                        </div>
+                                    <div class="form-group">
+                                        <label>Tanggal </label>
+                                        <div class="input-group">
+                                            <div class="input-group-addon">
+                                                <i class="fa fa-calendar"></i>
+                                            </div>
+                                            <input type="text" class="form-control pull-right" id="reservation"/>
+                                        </div><!-- /.input group -->
+                                    </div><!-- /.form group -->
+                                    <div class="box-footer">
+                                        <button type="submit" class="btn btn-primary">Cari</button>
+                                    </div>
+                                </div><!-- /.box-body -->
+                            </div><!-- /.box -->
+
+                            <div class="box">
+                                <div class="box-header">
+                                    <h3 class="box-title">Kurs {Mata Uang Kertas/Nilai Transaksi}<p></p> 
+                                    <small><p>Mata Uang : {Dolar Australia [ AUD ]} / 1,-</p>
+                                    <p>Data Pencarian dari tanggal : {24 Jan 2014} sampai {30 January 2014}</p></small></h3>
+                                </div><!-- /.box-header -->
+                                <div class="box-body no-padding">
+                                    <table class="table">
+                            <tr>
+                            <td><strong>Tanggal</strong></div></td>
+                            <td><strong>Nilai Jual</strong></div></td>
+                            <td><strong>Nilai Beli</strong></div></td>
+                            <td><strong>Nilai Tengah</strong></div></td>
+                          </tr>
+                           <tr>
+                            <td>
+                            24 Januari 2015</td>
+                            <td>5485.67</td>
+                            <td>4926.72</td>
+                            <td>5206.20</td>
+                          </tr>
+                          <tr>
+                            <td>
+                            29 Januari 2015</td>
+                            <td>5432.65</td>
+                            <td>4883.27</td>
+                            <td>5157.96</td>
+                          </tr>
+                           <tr>
+                            <td>
+                            30 Januari 2015</td>
+                            <td>5387.55</td>
+                            <td>4839.99</td>
+                            <td>5113.77</td>
+                          </tr>
+                          <tr>
+                            <td>
+                            31 Januari 2015</td>
+                            <td>5443.65</td>
+                            <td>4892.07</td>
+                            <td>5167.86</td>
+                          </tr>
+                     </table>
+                                </div><!-- /.box-body -->
+                                <div class="box-footer clearfix">
+                                    <ul class="pagination pagination-sm no-margin pull-right">
+                                        <li><a href="#">&laquo;</a></li>
+                                        <li><a href="#">1</a></li>
+                                        <li><a href="#">2</a></li>
+                                        <li><a href="#">3</a></li>
+                                        <li><a href="#">&raquo;</a></li>
+                                    </ul>
+                                </div>
+                            </div><!-- /.box -->
+
+                        </div><!-- /.col (right) -->
+                    </div><!-- /.row -->                    
+
+                </section>
+                <!-- /.content -->
+            </aside><!-- /.right-side -->
+        </div><!-- ./wrapper -->

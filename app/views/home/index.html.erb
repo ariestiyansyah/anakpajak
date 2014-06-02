@@ -1,33 +1,50 @@
-<style type="text/css" media="screen">
-      body {
-	text-align:center;
-        margin: 0;
-        margin-bottom: 25px;
-        padding: 0;
-        background-color: #f0f0f0;
-        font-family: "Lucida Grande", "Bitstream Vera Sans", "Verdana";
-        font-size: 13px;
-        color: #333;
-      }
+        <div class="wrapper row-offcanvas row-offcanvas-left">
+            <!-- Left side column. contains the logo and sidebar -->
+            <%= render "form/sidebar"%>
+            <!-- Right side column. Contains the navbar and content of the page -->
+            <aside class="right-side">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>
+                        <i class="ion ion-chatbubble-working"></i> Tanya Pajak
+                    </h1>
+                </section>
 
-      h1 {
-        font-size: 28px;
-        color: #000;
-      }
+                <!-- Main content -->
+                <section class="content">
+                            <!-- TO DO List -->
+                            <div class="box box-primary">
+                                <div class="box-header">
+                                    <h3 class="box-title"></h3>
+                                    <div class="box-tools pull-right">
+                                        <a href="<%= new_question_path %>"><button class="btn btn-default pull-right"><i class="fa fa-plus"></i> Add item</button></a>
+                                        
+                                    </div>
+                                </div><!-- /.box-header -->
+                                <div class="box-body">
+                                    <ul class="todo-list" id="list_question">
+                                        <%= render "form/list_question"%>    
+                                    </ul>
+                                </div><!-- /.box-body -->
 
-</style>
-<h1 align="center">DigitalOcean Rails Application</h1>
-<img src="assets/rails.png" align="center"><br/>
-<p>This file is located in /home/rails/app/views/home/index.html.erb</p>
+                                <div class="box-footer clearfix no-border">
+                                    <div class="box-tools pull-right">
+                                        <ul class="pagination pagination-sm inline" id="load_more">
+                                            <%= render "form/link_load_more_question"%>      
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div><!-- /.box -->
+                        </section><!-- right col -->
+                    </div><!-- /.row (main row) -->
+
+                </section><!-- /.content -->
+            </aside><!-- /.right-side -->
+        </div><!-- ./wrapper -->
+
+        <!-- add new calendar event modal -->
 
 
-asB
-B
-B
-D
-Youri application root is located in: <%= Rails.root.to_s %><br>
-
-Ruby version: <%= RUBY_VERSION %><br>
-
-Rails version: <%= Rails.version %><br>
-
+        <!-- jQuery 2.0.2 -->
+        
+        
