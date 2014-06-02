@@ -1,0 +1,27 @@
+<div class="row results">
+  <div class="large-12 columns ">
+    <div class="search-results">
+      <div class="row ">
+        <div class="large-12 columns">
+          <div class="row">
+            <div class=" large-9 columns">
+              <h5><a href="#"><%= @question.title %> </a></h5>
+              <p> <%= @question.content %></p>
+              <p><a href="#"> <span class="label round radius">PPN</span></a> <a href="#"> <span class="label round radius">PBB</span></a></p>
+            </div>
+            <div class=" large-5 columns">
+              <div id="vote_up">
+                <%= render "form/link_vote_up"%>
+              </div>
+              <div id="vote_down">
+                <%= render "form/link_vote_down"%>
+              </div>
+              <a href="#"  class="button [radius round]"><span>Jawab</span></a> 
+            </div>
+          </div>
+        </div>
+        <hr>
+      </div>
+    </div>
+  </div>
+</div> 

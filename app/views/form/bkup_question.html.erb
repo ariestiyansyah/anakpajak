@@ -1,0 +1,9 @@
+<%= form_for @question, :html => {:multipart => true, role: "form"} do |f| %>
+  <div class="form-group">
+    <%= f.label :title, class: "control-label" %>
+    <%= f.text_field :title, class: "form-control" %> <br>
+    <%= f.label :content, class: "control-label" %>
+    <%= f.text_area :content, class: "form-control" %> <br>
+    <%= f.submit "Add Question", class: "btn btn-primary" %>
+  </div>
+<% end %>

@@ -1,0 +1,14 @@
+<% @questions.each do |question| %>
+<li>
+    <!-- todo text -->
+    <a href="" class="text"><%= question.title %></a>
+    <!-- Emphasis label -->
+    <small class="label label-danger"><i class="fa fa-file-text"></i> PPh</small>
+    <small class="label label-success"><i class="fa fa-file-text"></i> Pajak </small>
+    <!-- General tools such as edit or delete-->
+    <div class="tools">
+        <i class="glyphicon glyphicon-ok"></i>
+        <i class="glyphicon glyphicon-edit"></i>
+    </div>
+</li>
+<% end %>
