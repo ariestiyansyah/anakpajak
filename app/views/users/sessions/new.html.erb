@@ -1,9 +1,10 @@
 <div class="form-box" id="login-box">
   <div class="header">Masuk</div>
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
     <div class="body bg-gray">
       <div class="form-group">
-        <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "User ID" %>
+        <%= f.text_field :login, autofocus: true, class: "form-control", placeholder: "User ID" %>
       </div>
       <div class="form-group">
         <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Password" %>
