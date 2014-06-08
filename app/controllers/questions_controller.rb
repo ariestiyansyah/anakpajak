@@ -21,7 +21,9 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    @question = Question.find_by_id params[:id]
+    @question     = Question.find_by_id params[:id]
+    @answer_new   = Answer.new
+    @answers      = @question.answers
   end
 
   def vote_up

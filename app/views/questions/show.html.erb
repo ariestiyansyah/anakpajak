@@ -25,70 +25,15 @@
                                     Oleh: <code><%= @question.user.username %></code>
                                     <p><%= raw(@question.content) %></p>
                                 <div class="box-footer">
-                                    <div class="input-group">
-                                        <input class="form-control" placeholder="Jawab....."/>
-                                        <div class="input-group-btn">
-                                            <button class="btn btn-success"><i class="fa fa-plus"></i></button>
-                                        </div>
-                                    </div>
+                                        <%= render "form/answer" %>
+                                      
                                 </div>
                                <div class="box-footer">     
                                <div class="box-body chat" id="chat-box">
-
-                                    <!-- chat item -->
-                                    <div class="item">
-                                        <img src="images/avatar5.png" alt="user image" class="online"/>
-                                        <p class="message">
-                                            <a href="#" class="name">
-                                                <small class="text-muted pull-right"><i class="fa fa-clock-o"></i> 2:15 </small>
-                                                Aji Achmad
-                                            </a>
-                                            Saya kira itu bagus
-                                        </p>
-                                        <div class="tools">
-                                                <i class="glyphicon glyphicon-ok"></i>
-                                                <i class="glyphicon glyphicon-edit"></i>
-                                            </div>
-                                        <div class="attachment">
-                                            <h4>Attachments:</h4>
-                                            <p class="filename">
-                                                Theme-thumbnail-image.jpg
-                                            </p>
-                                            <div class="pull-right">
-                                                <button class="btn btn-primary btn-sm btn-flat">Open</button>
-                                            </div>
-                                        </div><!-- /.attachment -->
-                                    </div><!-- /.item -->
-                                    <!-- chat item -->
-                                    <div class="item">
-                                        <img src="images/avatar5.png" alt="user image" class="offline"/>
-                                        <p class="message">
-                                            <a href="#" class="name">
-                                                <small class="text-muted pull-right"><i class="fa fa-clock-o"></i> 5:15</small>
-                                                Onto
-                                            </a>
-                                            Sangat menarik
-                                        </p>
-                                        <div class="tools">
-                                                <i class="glyphicon glyphicon-ok"></i>
-                                                <i class="glyphicon glyphicon-edit"></i>
-                                            </div>
-                                    </div><!-- /.item -->
-                                    <!-- chat item -->
-                                    <div class="item">
-                                        <img src="images/avatar5.png" alt="user image" class="offline"/>
-                                        <p class="message">
-                                            <a href="#" class="name">
-                                                <small class="text-muted pull-right"><i class="fa fa-clock-o"></i> 5:30</small>
-                                                Wisnu
-                                            </a>
-                                            Coba di improve lagi
-                                        </p>
-                                        <div class="tools">
-                                                <i class="glyphicon glyphicon-ok"></i>
-                                                <i class="glyphicon glyphicon-edit"></i>
-                                            </div>
-                                    </div><!-- /.item -->
+                                    <% @answers.each do |answer|%>
+                                        <% @answer = answer %>
+                                        <%= render "list/answer" %>
+                                    <% end %>
                                 </div><!-- /.chat -->
                                 
                             </div><!-- /.box (chat box) -->
