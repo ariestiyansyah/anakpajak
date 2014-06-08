@@ -1,0 +1,21 @@
+<div class="col-md-4">
+    <!-- Primary box -->
+    <div class="box box-solid box-primary">
+        <div class="box-header">
+            <h3 class="box-title"><%= article.title %></h3>
+            <div class="box-tools pull-right">
+                <button class="btn btn-primary btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                <button class="btn btn-primary btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>
+            </div>
+        </div>
+        <div class="box-body">
+            Oleh: <code><%= article.user.username %></code>
+            <p>
+                <%= raw(article.content[0..100])+"....." %>
+            </p>
+        </div>
+        <div class="box-footer">
+        <button class="btn btn-primary">Baca Selengkapnya</button>
+        </div><!-- /.box-body -->
+    </div><!-- /.box -->
+</div><!-- /.col -->

@@ -15,6 +15,8 @@ Myapp::Application.routes.draw do
   resource :user, only:[] do 
     get  ':user_name'   => 'users#timeline', on: :collection, as:"timeline"
   end
+  resources :articles, only:[:index, :create, :update, :delete, :new, :show] do
+  end
 
   # resources :answers
 end
