@@ -17,6 +17,8 @@ Myapp::Application.routes.draw do
   end
   resources :articles, only:[:index, :create, :update, :delete, :new, :show] do
   end
+  resources :rules, only:[:index, :create, :update, :delete, :new, :show] do
+  end
 
   # resources :answers
 end

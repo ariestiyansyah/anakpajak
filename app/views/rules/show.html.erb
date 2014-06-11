@@ -1,0 +1,54 @@
+<div class="wrapper row-offcanvas row-offcanvas-left">
+            <!-- Left side column. contains the logo and sidebar -->
+            <%= render "form/sidebar"%>
+            <!-- Right side column. Contains the navbar and content of the page -->
+            <aside class="right-side">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>
+                        Jawab
+                    </h1>
+                </section>
+                <!-- Main content -->
+                <section class="content">
+                    <!-- Primary box -->
+
+                            <div class="box box-solid box-primary">
+                                <div class="box-header">
+                                    <h3 class="box-title"><%= @rule.title %></h3>
+                                    <div class="box-tools pull-right">
+                                        <button class="btn btn-primary btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                        <button class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-ok"></i></button>
+                                    </div>
+                                </div>
+                                <div class="box-body">
+                                    Oleh: <code><%= @rule.user.username %></code>
+                                    <p><%= raw(@rule.content) %></p>
+                                <div class="box-footer">
+                                        <%#= render "form/answer" %>
+                                      
+                                </div>
+                               <div class="box-footer">     
+                               <div class="box-body chat" id="chat-box">
+                                    <%# @answers.each do |answer|%>
+                                        <%# @answer = answer %>
+                                        <%#= render "list/answer" %>
+                                    <%# end %>
+                                </div><!-- /.chat -->
+                                
+                            </div><!-- /.box (chat box) -->
+                                </div><!-- /.box-body -->
+                            </div><!-- /.box -->
+                        </div>
+            </aside><!-- /.right-side -->
+        </div><!-- ./wrapper -->
+
+        <script type="text/javascript">
+            $(function() {
+                // Replace the <textarea id="editor1"> with a CKEditor
+                // instance, using default configuration.
+                CKEDITOR.replace('editor1');
+                //bootstrap WYSIHTML5 - text editor
+                $(".textarea").wysihtml5();
+            });
+        </script>
