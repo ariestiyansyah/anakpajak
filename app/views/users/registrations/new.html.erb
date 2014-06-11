@@ -1,9 +1,14 @@
-<body class="bg-black">
-  <div class="form-box" id="login-box">
+<% content_for :title do %>Register<% end %>
+<div class="form-box" id="login-box">
       <div class="header">Daftar Baru</div>
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-        <%= devise_error_messages! %>
         <div class="body bg-gray">
+            <% if devise_error_messages! != "" %>
+              <div class="alert alert-warning alert-dismissable">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                <strong>Please Check Again !!!</strong>
+              </div>
+            <% end %>
           <div class="form-group">
             <%= f.text_field :username, autofocus: true, class: "form-control", placeholder: "Username" %>
           </div>
@@ -35,6 +40,6 @@
 
         <!-- jQuery 2.0.2 -->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-        <!-- Bootstrap -->
-        <script src="js/bootstrap.min.js" type="text/javascript"></script>
+        <%= javascript_include_tag "bootstrap.min" %>
+        
 

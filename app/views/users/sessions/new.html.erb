@@ -1,8 +1,15 @@
 <div class="form-box" id="login-box">
   <div class="header">Masuk</div>
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <%= devise_error_messages! %>
     <div class="body bg-gray">
+      <% flash.each do |name, msg| %>
+        <% if msg.is_a?(String) %>
+          <div class="alert alert-warning alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <strong><%= content_tag :div, msg, :class => "flash_#{name}" %></strong>
+          </div>
+         <% end %>
+      <% end %>
       <div class="form-group">
         <%= f.text_field :login, autofocus: true, class: "form-control", placeholder: "User ID" %>
       </div>
@@ -28,4 +35,6 @@
 
   </div>
 </div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+<%= javascript_include_tag "bootstrap.min" %>
 

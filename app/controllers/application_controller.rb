@@ -5,15 +5,15 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   layout :layout_by_resource
 
-  protected
-
-    def layout_by_resource
-      if devise_controller?
-        "users"
-      else
-        "application"
-      end
+  
+  def layout_by_resource
+    if devise_controller? && params[:action]!="edit"
+      "users"
+    else
+      "application"
     end
+  end
+  protected
 
     def configure_permitted_parameters
       devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:username, :email, :password, :password_confirmation, :remember_me) }
