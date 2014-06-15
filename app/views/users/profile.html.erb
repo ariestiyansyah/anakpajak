@@ -122,7 +122,11 @@
                                     <div class="profile-info-row">
                                         <div class="profile-info-name"> Quotes </div>
                                         <div class="profile-info-value">
-                                            <span class="editable" id="about"><%= @quotes.last.content if @quotes != [] || @quotes != nil  %></span>
+                                            <span class="editable" id="about">
+                                                <% if @quotes != [] %>
+                                                    <%= @quotes.last.content %>
+                                                <% end %>
+                                            </span>
                                         </div>
                                     </div>
                                 </div>
