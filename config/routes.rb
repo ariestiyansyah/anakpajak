@@ -13,12 +13,13 @@ Myapp::Application.routes.draw do
   end
 
   resource :user, only:[] do 
-    get  ':user_name' => 'users#timeline',  on: :collection, as:"timeline"
+    
   end
   resources :articles, only:[:index, :create, :update, :delete, :new, :show] do
   end
   resources :rules, only:[:index, :create, :update, :delete, :new, :show] do
   end
+  get  'timeline'   => 'home#timeline', as:"timeline"
   get  ':username'  => 'users#profile', as:"profile"
   
 

@@ -5,4 +5,7 @@ class HomeController < ApplicationController
     @questions = Question.all.page(params[:page])
     # debugger
   end
+  def timeline
+    
+  end
 end

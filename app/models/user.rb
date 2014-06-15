@@ -9,6 +9,9 @@ class User < ActiveRecord::Base
   has_many :answers
   has_many :articles
   has_many :rules
+  has_many :quotes
+  acts_as_followable
+  acts_as_follower
   # validates_presence_of :username
   validates :username,
   :uniqueness => {
