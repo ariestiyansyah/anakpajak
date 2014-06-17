@@ -8,5 +8,7 @@ class UsersController < ApplicationController
     @articles   = @user.articles
     @questions  = @user.questions
     @quotes     = @user.quotes
+    @activities = PublicActivity::Activity.all.where(owner: current_user)
+    @template   = "profile"  
   end
 end

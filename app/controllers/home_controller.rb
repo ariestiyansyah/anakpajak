@@ -6,6 +6,7 @@ class HomeController < ApplicationController
     # debugger
   end
   def timeline
-    
+    @activities = PublicActivity::Activity.all  
+    @template   = "timeline"
   end
 end

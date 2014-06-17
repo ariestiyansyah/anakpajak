@@ -12,21 +12,20 @@
                 </section>
                 <!-- Main content -->
                 <section class="content">
-
                     <!-- row -->
                     <div class="row">                        
                         <div class="col-md-12">
                             <!-- The time line -->
                             <ul class="timeline">
                                 <!-- timeline time label -->
-                                <li class="time-label">
+                                <!-- <li class="time-label">
                                     <span class="bg-red">
                                         10 Feb. 2014
                                     </span>
-                                </li>
+                                </li> -->
                                 <!-- /.timeline-label -->
                                 <!-- timeline item -->
-                                <li>
+                                <!-- <li>
                                     <i class="fa fa-envelope bg-blue"></i>
                                     <div class="timeline-item">
                                         <span class="time"><i class="fa fa-clock-o"></i> 12:05</span>
@@ -39,19 +38,22 @@
                                             <a class="btn btn-danger btn-xs">Star</a>
                                         </div>
                                     </div>
-                                </li>
+                                </li> -->
+                                <% @activities.each do |activity| %>
+                                    <%= render_activity activity %>
+                                <% end %>
                                 <!-- END timeline item -->
                                 <!-- timeline item -->
-                                <li>
+                                <!-- <li>
                                     <i class="fa fa-user bg-aqua"></i>
                                     <div class="timeline-item">
                                         <span class="time"><i class="fa fa-clock-o"></i> 5 mins ago</span>
                                         <h3 class="timeline-header no-border"><a href="#">Aji Achmad</a> following you</h3>
                                     </div>
-                                </li>
+                                </li> -->
                                 <!-- END timeline item -->
                                 <!-- timeline item -->
-                                <li>
+                               <!--  <li>
                                     <i class="fa fa-comments bg-yellow"></i>
                                     <div class="timeline-item">
                                         <span class="time"><i class="fa fa-clock-o"></i> 27 mins ago</span>
@@ -65,17 +67,17 @@
                                             <a class="btn btn-warning btn-flat btn-xs">View comment</a>
                                         </div>
                                     </div>
-                                </li>
+                                </li> -->
                                 <!-- END timeline item -->
                                 <!-- timeline time label -->
-                                <li class="time-label">
+                                <!-- <li class="time-label">
                                     <span class="bg-green">
                                         3 Jan. 2014
                                     </span>
-                                </li>
+                                </li> -->
                                 <!-- /.timeline-label -->
                                 <!-- timeline item -->
-                                <li>
+                                <!-- <li>
                                     <i class="fa fa-camera bg-purple"></i>
                                     <div class="timeline-item">
                                         <span class="time"><i class="fa fa-clock-o"></i> 2 days ago</span>
@@ -87,7 +89,7 @@
                                             <img src="http://placehold.it/150x100" alt="..." class='margin'/>
                                         </div>
                                     </div>
-                                </li>
+                                </li> -->
                                 <!-- END timeline item -->
                                 <li>
                                     <i class="fa fa-clock-o"></i>
