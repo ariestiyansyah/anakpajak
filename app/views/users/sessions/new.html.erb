@@ -29,7 +29,10 @@
   <div class="margin text-center">
       <span>Daftar menggunakan social networks</span>
       <br/>
-      <button class="btn bg-light-blue btn-circle"><i class="fa fa-facebook"></i></button>
+      <%= link_to user_omniauth_authorize_path(:facebook), :class => 'btn bg-light-blue btn-circle' do %>
+          <i class="fa fa-facebook"></i>
+      <% end %>
+      <!-- <button class="btn bg-light-blue btn-circle"><i class="fa fa-facebook"></i></button> -->
       <button class="btn bg-aqua btn-circle"><i class="fa fa-twitter"></i></button>
       <button class="btn bg-red btn-circle"><i class="fa fa-google-plus"></i></button>
 
