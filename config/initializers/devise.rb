@@ -256,7 +256,7 @@ Devise.setup do |config|
 
   require "omniauth-facebook"
   # config.omniauth :facebook, "670970939657257", "1f7c3f355b21976e5be922befd413e70"
-  config.omniauth :facebook, "670972412990443", "eee42303467f6618e6e73a4db734c4ea"
+  config.omniauth :facebook, "670970939657257", "1f7c3f355b21976e5be922befd413e70"
   require "omniauth-google-oauth2"
   config.omniauth :google_oauth2, "APP_ID", "APP_SECRET", { access_type: "offline", approval_prompt: "" }
   require 'omniauth-twitter'
