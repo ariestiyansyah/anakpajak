@@ -1,0 +1,4 @@
+$( "div#main-container" ).hide( "slow", function () {
+  $( "div#main-container" ).html("<%= escape_javascript(render 'main_form/index_timeline') %>");
+  $( "div#main-container" ).show( "slow" );
+});

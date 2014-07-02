@@ -1,109 +1,52 @@
-<div class="wrapper row-offcanvas row-offcanvas-left">
-            <!-- Left side column. contains the logo and sidebar -->
-            <%= render "form/sidebar"%>
-            <!-- Right side column. Contains the navbar and content of the page -->
-            <aside class="right-side">
-                <!-- Content Header (Page header) -->
-                <section class="content-header">
-                    <h1>
-                        <i class="ion ion-earth"></i> Timeline
-                        <small>...</small>
-                    </h1>
-                </section>
-                <!-- Main content -->
-                <section class="content">
-                    <!-- row -->
-                    <div class="row">                        
-                        <div class="col-md-12">
-                            <!-- The time line -->
-                            <ul class="timeline">
-                                <!-- timeline time label -->
-                                <!-- <li class="time-label">
-                                    <span class="bg-red">
-                                        10 Feb. 2014
-                                    </span>
-                                </li> -->
-                                <!-- /.timeline-label -->
-                                <!-- timeline item -->
-                                <!-- <li>
-                                    <i class="fa fa-envelope bg-blue"></i>
-                                    <div class="timeline-item">
-                                        <span class="time"><i class="fa fa-clock-o"></i> 12:05</span>
-                                        <h3 class="timeline-header"><a href="#">Support Team</a> mengirimkan anda pesan</h3>
-                                        <div class="timeline-body">
-                                            Hai selamat datang di anakpajak.com...
-                                        </div>
-                                        <div class='timeline-footer'>
-                                            <a class="btn btn-primary btn-xs">Baca Selengkapnya</a>
-                                            <a class="btn btn-danger btn-xs">Star</a>
-                                        </div>
-                                    </div>
-                                </li> -->
-                                <% @activities.each do |activity| %>
-                                    <%= render_activity activity %>
-                                <% end %>
-                                <!-- END timeline item -->
-                                <!-- timeline item -->
-                                <!-- <li>
-                                    <i class="fa fa-user bg-aqua"></i>
-                                    <div class="timeline-item">
-                                        <span class="time"><i class="fa fa-clock-o"></i> 5 mins ago</span>
-                                        <h3 class="timeline-header no-border"><a href="#">Aji Achmad</a> following you</h3>
-                                    </div>
-                                </li> -->
-                                <!-- END timeline item -->
-                                <!-- timeline item -->
-                               <!--  <li>
-                                    <i class="fa fa-comments bg-yellow"></i>
-                                    <div class="timeline-item">
-                                        <span class="time"><i class="fa fa-clock-o"></i> 27 mins ago</span>
-                                        <h3 class="timeline-header"><a href="#">Jay White</a> commented on your post</h3>
-                                        <div class="timeline-body">
-                                            Take me to your leader!
-                                            Switzerland is small and neutral!
-                                            We are more like Germany, ambitious and misunderstood!
-                                        </div>
-                                        <div class='timeline-footer'>
-                                            <a class="btn btn-warning btn-flat btn-xs">View comment</a>
-                                        </div>
-                                    </div>
-                                </li> -->
-                                <!-- END timeline item -->
-                                <!-- timeline time label -->
-                                <!-- <li class="time-label">
-                                    <span class="bg-green">
-                                        3 Jan. 2014
-                                    </span>
-                                </li> -->
-                                <!-- /.timeline-label -->
-                                <!-- timeline item -->
-                                <!-- <li>
-                                    <i class="fa fa-camera bg-purple"></i>
-                                    <div class="timeline-item">
-                                        <span class="time"><i class="fa fa-clock-o"></i> 2 days ago</span>
-                                        <h3 class="timeline-header"><a href="#">Mina Lee</a> uploaded new photos</h3>
-                                        <div class="timeline-body">
-                                            <img src="http://placehold.it/150x100" alt="..." class='margin' />
-                                            <img src="http://placehold.it/150x100" alt="..." class='margin'/>
-                                            <img src="http://placehold.it/150x100" alt="..." class='margin'/>
-                                            <img src="http://placehold.it/150x100" alt="..." class='margin'/>
-                                        </div>
-                                    </div>
-                                </li> -->
-                                <!-- END timeline item -->
-                                <li>
-                                    <i class="fa fa-clock-o"></i>
-                                </li>
-                            </ul>
-                        </div><!-- /.col -->
-                    </div><!-- /.row -->
+<% content_for :style do %>
+  <%= stylesheet_link_tag "bootstrap.min" %>
+  <%= stylesheet_link_tag "font-awesome.min" %>
+  <%= stylesheet_link_tag "pace" %>
+  <%= stylesheet_link_tag "chosen/chosen.min" %>
+  <%= stylesheet_link_tag "datepicker" %>
+  <%= stylesheet_link_tag "bootstrap-timepicker" %>
+  <%= stylesheet_link_tag "slider" %>
+  <%= stylesheet_link_tag "jquery.tagsinput" %>
+  <%= stylesheet_link_tag "bootstrap-wysihtml5" %>
+  <%= stylesheet_link_tag 'dropzone/dropzone' %>
+  <%= stylesheet_link_tag "endless.min" %>
+  <%= stylesheet_link_tag "endless-skin" %>
+<% end %>
 
-                                                  
-                                </div><!-- /.box-body -->
-                            </div><!-- /.box -->
-                        </div><!-- /.col -->
-                    </div><!-- /.row -->
+  <body class="overflow-hidden">
+  <!-- Overlay Div -->
+  <div id="overlay" class="transparent"></div>  
+  <div id="wrapper" class="preload">
+    <%= render 'layouts/user_top_navigation' %>
+    <div id="main-container">
+      <%= render 'main_form/index_timeline' %>
+    </div><!-- /main-container -->
+  </div><!-- /wrapper -->
 
-                </section><!-- /.content -->
-            </aside><!-- /.right-side -->
-        </div><!-- ./wrapper -->
+  <a href="" id="scroll-to-top" class="hidden-print"><i class="fa fa-chevron-up"></i></a>
+  
+  
+  
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  <%= javascript_include_tag "jquery-1.10.2.min" %>
+  <%= javascript_include_tag "bootstrap.min" %>
+  <%= javascript_include_tag 'chosen.jquery.min' %> 
+  <%= javascript_include_tag 'jquery.maskedinput.min' %>  
+  <%= javascript_include_tag 'bootstrap-datepicker.min' %>  
+  <%= javascript_include_tag 'bootstrap-timepicker.min' %>  
+  <%= javascript_include_tag 'bootstrap-slider.min' %>  
+  <%= javascript_include_tag 'jquery.tagsinput.min' %>  
+  <%= javascript_include_tag 'wysihtml5-0.3.0.min' %> 
+  <%= javascript_include_tag 'uncompressed/bootstrap-wysihtml5' %>  
+  <%= javascript_include_tag 'dropzone.min' %>  
+  <%= javascript_include_tag 'modernizr.min' %>
+  <%= javascript_include_tag 'pace.min' %>
+  <%= javascript_include_tag 'jquery.popupoverlay.min' %>
+  <%= javascript_include_tag 'jquery.slimscroll.min' %>
+  <%= javascript_include_tag 'jquery.cookie.min' %>
+  <%= javascript_include_tag "endless/endless_form" %>
+  <%= javascript_include_tag "endless/endless" %>
+  
+  </body>

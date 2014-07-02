@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= content_for?(:title) ? yield(:title) : "AnakPajak.com" %></title>
+  <title><%= content_for?(:title) ? yield(:title) : "AnakPajak.com Alfa Version" %></title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <%= content_for?(:style) ? yield(:style) : "" %>
 </head>
-<body class="fixed skin-blue">
-  <%= render 'layouts/navigation' %>
+  <%#= render 'layouts/navigation' %>
   <%= yield %>
-  <%= render 'layouts/footer' %>
-</body>
+  <%#= render 'layouts/footer' %>
 </html>

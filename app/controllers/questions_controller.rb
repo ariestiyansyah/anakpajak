@@ -4,6 +4,10 @@ class QuestionsController < ApplicationController
     @question = Question.new
   end
 
+  def index
+    @questions = Question.all
+  end
+
   def create
     question      = Question.new set_params
     question.user = current_user

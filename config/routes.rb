@@ -12,6 +12,8 @@ Myapp::Application.routes.draw do
     post  ':id/vote_down' => 'questions#vote_down', on: :collection, as:"vote_down"
   end
 
+  resources :consultants
+
   resource :user, only:[] do 
     
   end
@@ -20,7 +22,10 @@ Myapp::Application.routes.draw do
   resources :rules, only:[:index, :create, :update, :delete, :new, :show] do
   end
   get  'timeline'   => 'home#timeline', as:"timeline"
-  get  ':username'  => 'users#profile', as:"profile"
+  # get  '/websocket' => redirect("ws://localhost:3000/websocket")
+  get  ':username'  => 'users#profile', as: "profile"
+
+
   
 
   # resources :answers

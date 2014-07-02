@@ -16,3 +16,45 @@
 //= require_tree .
 //=# require turbolinks
 
+//= require websocket_rails/main
+
+// var dispatcher = new WebSocketRails('microlabil.com:3001/websocket');
+// channel = dispatcher.subscribe('articles');
+// channel.bind('new', function(article) {
+//   console.log('a new article about '+article.id+' arrived!');
+// })
+// $( document ).ready( function(){
+//   alert("<%#= articles_path %>")
+//   $("a#articles").click( function() {
+//     $.get( "<%#= articles_path %>", function( data ) {
+//       $( "div#main-container" ).html( "aji" );
+//     });
+//   });
+
+  // $("input.transaction-type").on("click", function(){
+  //   if($(this).attr('id') == 'transaksi_add_saving'){
+  //     $("#select_saving").show('fast');
+  //     $("#name_events").hide('fast');
+  //     $("input#name").removeAttr('required');
+  //   }
+  //   if($(this).attr('id') == 'transaksi_add_outcome' || $(this).attr('id') == 'transaksi_add_income'){
+  //     $("#select_saving").hide('fast');
+  //     $("#name_events").show('fast');
+  //     $("input#name").attr('required', 'true');
+  //   }
+  // });
+
+  // $("a.edit").on("click", function(){
+  //   $( "div#target" ).load( $(this).attr('href')+" form", function(){
+  //     $('.datepicker').datepicker({
+  //       format: "dd MM yyyy",
+  //       weekStart: 1,
+  //       todayBtn: "linked",
+  //       autoclose: true,
+  //       todayHighlight: true
+  //     });
+  //   });
+  // });
+
+// });
+

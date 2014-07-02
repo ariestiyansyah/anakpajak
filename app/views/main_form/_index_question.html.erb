@@ -1,0 +1,66 @@
+<div id="breadcrumb">
+        <ul class="breadcrumb">
+           <li><i class="fa fa-bar-chart-o"></i><a href="index.html"> Tanya Pajak</a></li>
+        </ul>
+      </div><!-- breadcrumb -->
+      <div class="padding-md">
+        <div class="row">
+      <div class="col-sm-12">
+          <div class="panel panel-default inbox-panel">
+            <div class="panel-heading">
+              <div class="input-group">
+                <input type="text" class="form-control input-sm" placeholder="Search here...">
+                  <span class="input-group-btn">
+                  <button class="btn btn-default btn-sm" type="button"><i class="fa fa-search"></i></button>
+                </span>
+              </div><!-- /input-group -->
+            </div>
+            <div class="panel-body">
+              <a class="btn btn-sm btn-danger" href="<%= new_question_path %>"><i class="fa fa-plus"></i> Buat Pertanyaan</a>
+
+          
+              <div class="pull-right">
+                <a class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown"><i class="fa fa-refresh"></i></a>      
+                <div class="btn-group" id="inboxFilter">
+                  <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+                    All
+                    <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu pull-right">
+                    <li><a href="#">PPN</a></li>
+                    <li><a href="#">PBB</a></li>
+                    <li><a href="#">PPh</a></li>
+                    <li><a href="#">KUP</a></li>
+                  </ul>
+                </div><!-- /btn-group -->
+              </div>
+            </div>
+            <ul class="list-group">
+              <li class="list-group-item clearfix inbox-item">
+                <span class="starred"><i class="fa fa-star fa-lg"></i></span>
+                <span class="detail">Phasellus ac feugiat mauris. Interdum et malesuada fames ac ante ipsum primis in faucibus.</span> <span class="from">ariestiyansyah</span> 
+                <span class="inline-block pull-right">
+                  <small class="label label-info"><i class="fa fa-file-text"></i> PPN</small>             
+                  <span class="time"> 2:32 Am</span>    
+                </span>
+              </li>
+              <% @questions.each do |question| %>
+                <%= render partial: "list/question", locals: {question: question} %>
+              <% end %>
+            </ul><!-- /list-group -->
+            <div class="panel-footer clearfix">
+              
+              <div class="pull-right">
+                <span class="middle">Page 1 of 8 </span>
+                <ul class="pagination middle">
+                  <li class="disabled"><a href="#"><i class="fa fa-step-backward"></i></a></li>
+                  <li class="disabled"><a href="#"><i class="fa fa-caret-left large"></i></a></li>
+                  <li><a href="#"><i class="fa fa-caret-right large"></i></a></li>
+                  <li><a href="#"><i class="fa fa-step-forward"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div><!-- /panel -->
+        </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.padding-sm -->

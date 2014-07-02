@@ -1,30 +1,52 @@
-<div class="wrapper row-offcanvas row-offcanvas-left">
-            <!-- Left side column. contains the logo and sidebar -->
-            <aside class="left-side sidebar-offcanvas">
-                <!-- sidebar: style can be found in sidebar.less -->
-                <%= render "form/sidebar"%>
-                <!-- /.sidebar -->
-            </aside>
-            <!-- Right side column. Contains the navbar and content of the page -->
-            <aside class="right-side">
-                <!-- Content Header (Page header) -->
-                <section class="content-header">
-                    <div class="box box-primary">
-                                <div class="box-header">
-                                    <h3 class="box-title">Article Pajak</h3>
-                                    <div class="box-tools pull-right">
-                                        <a href="<%= new_article_path %>"><button class="btn btn-default pull-right"><i class="fa fa-plus"></i> Add item</button></a>
-                                        
-                                    </div>
-                                </div><!-- /.box-header -->
-                                
-                            </div><!-- /.box -->
-                </section>
-                <!-- Main content -->
-                <section class="content">
-                    <% @articles.each do |article| %>
-                        <%= render partial: "list/article", locals: {article: article} %>
-                    <% end %>
-                </section>
-            </aside><!-- /.right-side -->
-        </div><!-- ./wrapper -->
+<% content_for :style do %>
+  <%= stylesheet_link_tag "bootstrap.min" %>
+  <%= stylesheet_link_tag "font-awesome.min" %>
+  <%= stylesheet_link_tag "pace" %>
+  <%= stylesheet_link_tag "chosen/chosen.min" %>
+  <%= stylesheet_link_tag "datepicker" %>
+  <%= stylesheet_link_tag "bootstrap-timepicker" %>
+  <%= stylesheet_link_tag "slider" %>
+  <%= stylesheet_link_tag "jquery.tagsinput" %>
+  <%= stylesheet_link_tag "bootstrap-wysihtml5" %>
+  <%= stylesheet_link_tag 'dropzone/dropzone' %>
+  <%= stylesheet_link_tag "endless.min" %>
+  <%= stylesheet_link_tag "endless-skin" %>
+<% end %>
+
+  <body class="overflow-hidden">
+  <!-- Overlay Div -->
+  <div id="overlay" class="transparent"></div>  
+  <div id="wrapper" class="preload">
+    <%= render 'layouts/user_top_navigation' %>
+    <div id="main-container">
+        <%#= render 'main_form/index_article' %>        
+    </div><!-- /main-container -->
+  </div><!-- /wrapper -->
+
+  <a href="" id="scroll-to-top" class="hidden-print"><i class="fa fa-chevron-up"></i></a>
+  
+  
+  
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  <%= javascript_include_tag "jquery-1.10.2.min" %>
+  <%= javascript_include_tag "bootstrap.min" %>
+  <%= javascript_include_tag 'chosen.jquery.min' %> 
+  <%= javascript_include_tag 'jquery.maskedinput.min' %>  
+  <%= javascript_include_tag 'bootstrap-datepicker.min' %>  
+  <%= javascript_include_tag 'bootstrap-timepicker.min' %>  
+  <%= javascript_include_tag 'bootstrap-slider.min' %>  
+  <%= javascript_include_tag 'jquery.tagsinput.min' %>  
+  <%= javascript_include_tag 'wysihtml5-0.3.0.min' %> 
+  <%= javascript_include_tag 'uncompressed/bootstrap-wysihtml5' %>  
+  <%= javascript_include_tag 'dropzone.min' %>  
+  <%= javascript_include_tag 'modernizr.min' %>
+  <%= javascript_include_tag 'pace.min' %>
+  <%= javascript_include_tag 'jquery.popupoverlay.min' %>
+  <%= javascript_include_tag 'jquery.slimscroll.min' %>
+  <%= javascript_include_tag 'jquery.cookie.min' %>
+  <%= javascript_include_tag "endless/endless_form" %>
+  <%= javascript_include_tag "endless/endless" %>
+  
+  </body>
