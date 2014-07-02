@@ -1,0 +1,6 @@
+$( "div#main-container" ).hide( "slow", function () {
+  $( "div#main-container" ).html("<%= escape_javascript(render 'form/question') %>", function () {
+    
+  });
+  $( "div#main-container" ).show( "slow" );
+});

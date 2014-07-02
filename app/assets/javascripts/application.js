@@ -17,6 +17,8 @@
 //=# require turbolinks
 
 //= require websocket_rails/main
+//= require bootstrap-wysihtml5
+//= require bootstrap-wysihtml5/locales
 
 // var dispatcher = new WebSocketRails('microlabil.com:3001/websocket');
 // channel = dispatcher.subscribe('articles');

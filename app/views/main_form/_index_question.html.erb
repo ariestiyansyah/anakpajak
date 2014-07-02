@@ -16,9 +16,9 @@
               </div><!-- /input-group -->
             </div>
             <div class="panel-body">
-              <a class="btn btn-sm btn-danger" href="<%= new_question_path %>"><i class="fa fa-plus"></i> Buat Pertanyaan</a>
-
-          
+              <%= link_to( new_question_path, remote: true, class: "btn btn-sm btn-danger") do %>
+                <i class="fa fa-plus"></i> Buat Pertanyaan
+              <% end %>
               <div class="pull-right">
                 <a class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown"><i class="fa fa-refresh"></i></a>      
                 <div class="btn-group" id="inboxFilter">

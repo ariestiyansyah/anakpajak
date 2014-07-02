@@ -1,0 +1,4 @@
+$( "div#main-container" ).hide( "slow", function () {
+  $( "div#main-container" ).html("<%= escape_javascript(render 'main_form/index_profile') %>");
+  $( "div#main-container" ).show( "slow" );
+});

@@ -1,6 +1,6 @@
 <div id="top-nav" class="skin-6 fixed">
       <div class="brand">
-        <span>anakpajak</span>
+        <a href="<% root_path %>"><span>anakpajak</span></a>
       </div><!-- /brand -->
       <button type="button" class="navbar-toggle pull-left" id="sidebarToggle">
         <span class="icon-bar"></span>
@@ -147,7 +147,11 @@
                 </div>
               </a>
             </li>
-            <li><a tabindex="-1" href="profile.html" class="main-link"><i class="fa fa-edit fa-lg"></i> Edit profile</a></li>
+            <li>
+              <%= link_to(profile_path(current_user.username), remote: true, class: "main-link") do %>
+                <i class="fa fa-edit fa-lg"></i> Account Profile
+              <% end %>
+            </li>
             <li><a tabindex="-1" href="gallery.html" class="main-link"><i class="fa fa-picture-o fa-lg"></i> Photo Gallery</a></li>
             <li><a tabindex="-1" href="#" class="theme-setting"><i class="fa fa-cog fa-lg"></i> Setting</a></li>
             <li class="divider"></li>

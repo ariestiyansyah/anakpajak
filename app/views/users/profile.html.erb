@@ -1,352 +1,52 @@
-<div class="wrapper row-offcanvas row-offcanvas-left">
-    <!-- Left side column. contains the logo and sidebar -->
-    <%= render "form/sidebar"%>
-    <!-- Right side column. Contains the navbar and content of the page -->
-    <aside class="right-side">
-        <!-- Content Header (Page header) -->
-        <section class="content-header">
-            <h1>
-                Profil
-            </h1>
-        </section>
-        <!-- Main content -->
-        <section class="content">
-            <div class="box box-solid box-primary">
-                <div class="box-header">
-                    <h3 class="box-title"><%= @user.username %></h3>
-                </div>
-            <div class="box-body">
-            <div class="row">
-                <div class="col-xs-12">
-                    <div>
-                        <div id="user-profile-1" class="user-profile row">
-                            <div class="col-xs-12 col-sm-3 center">
-                                <div>
-                                    <span class="profile-picture">
-                                        <%= image_tag("avatar5.png", id:"avatar", class: "editable img-responsive", alt: "Alex's Avatar")%>
-                                    </span>
-                                    <div class="space-4"></div>
-                                </div>
-                                <div class="space-6"></div>
-                                <div class="profile-contact-info">
-                                    <div class="profile-contact-links align-left">
-                                        <a href="#" class="btn btn-link">
-                                            <i class="ace-icon fa fa-plus-circle bigger-120 green"></i>
-                                            Follow
-                                        </a>
+<% content_for :style do %>
+  <%= stylesheet_link_tag "bootstrap.min" %>
+  <%= stylesheet_link_tag "font-awesome.min" %>
+  <%= stylesheet_link_tag "pace" %>
+  <%= stylesheet_link_tag "chosen/chosen.min" %>
+  <%= stylesheet_link_tag "datepicker" %>
+  <%= stylesheet_link_tag "bootstrap-timepicker" %>
+  <%= stylesheet_link_tag "slider" %>
+  <%= stylesheet_link_tag "jquery.tagsinput" %>
+  <%= stylesheet_link_tag "bootstrap-wysihtml5" %>
+  <%= stylesheet_link_tag 'dropzone/dropzone' %>
+  <%= stylesheet_link_tag "endless.min" %>
+  <%= stylesheet_link_tag "endless-skin" %>
+<% end %>
 
-                                        <!-- <a href="#" class="btn btn-link">
-                                            <i class="ace-icon fa fa-envelope bigger-120 pink"></i>
-                                            Send a message
-                                        </a>
+  <body class="overflow-hidden">
+  <!-- Overlay Div -->
+  <div id="overlay" class="transparent"></div>  
+  <div id="wrapper" class="preload">
+    <%= render 'layouts/user_top_navigation' %>
+    <div id="main-container">
+        <%= render 'main_form/index_profile' %>        
+    </div><!-- /main-container -->
+  </div><!-- /wrapper -->
 
-                                        <a href="#" class="btn btn-link">
-                                            <i class="ace-icon fa fa-globe bigger-125 blue"></i>
-                                            www.oonlab.com
-                                        </a> -->
-                                    </div>
-                                    <div class="space-6"></div>
-                                </div>
-                                <br>    
-                                <div class="hr hr16 dotted"></div>
-                            </div>
-                            <div class="col-xs-12 col-sm-9">
-                                <div class="center">
-                                    <span class="btn btn-app btn-sm btn-light no-hover">
-                                        <span class="line-height-1 bigger-170 blue"> <%= @quotes.size %> </span>
-                                        <br />
-                                        <span class="line-height-1 smaller-90"> Post </span>
-                                    </span>
-                                    <span class="btn btn-app btn-sm btn-yellow no-hover">
-                                        <span class="line-height-1 bigger-170"><%= @follower.size %> </span>
-                                        <br />
-                                        <span class="line-height-1 smaller-90"> Followers </span>
-                                    </span>
-                                    <span class="btn btn-app btn-sm btn-pink no-hover">
-                                        <span class="line-height-1 bigger-170"> <%= @following.size %> </span>
-                                        <br />
-                                        <span class="line-height-1 smaller-90"> Following </span>
-                                    </span>
-                                    <span class="btn btn-app btn-sm btn-grey no-hover">
-                                        <span class="line-height-1 bigger-170"> <%= @questions.size %> </span>
-                                        <br />
-                                        <span class="line-height-1 smaller-90"> Pertanyaan </span>
-                                    </span>
-                                    <span class="btn btn-app btn-sm btn-success no-hover">
-                                        <span class="line-height-1 bigger-170"> <%= @articles.size %> </span>
-                                        <br />
-                                        <span class="line-height-1 smaller-90"> Artikel </span>
-                                    </span>
-                                    <span class="btn btn-app btn-sm btn-primary no-hover">
-                                        <span class="line-height-1 bigger-170"> 55 </span>
-                                        <br />
-                                        <span class="line-height-1 smaller-90"> star </span>
-                                    </span>
-                                </div>
-                                <div class="space-12"></div>
-                                <div class="profile-user-info profile-user-info-striped">
-                                    <div class="profile-info-row">
-                                        <div class="profile-info-name"> Username </div>
-                                        <div class="profile-info-value">
-                                            <span class="editable" id="username"><%= @user.username %></span>
-                                        </div>
-                                    </div>
-                                    <div class="profile-info-row">
-                                        <div class="profile-info-name"> Lokasi </div>
-
-                                        <div class="profile-info-value">
-                                            <i class="fa fa-map-marker light-orange bigger-110"></i>
-                                            <span class="editable" id="country">Indonesia</span>
-                                            <span class="editable" id="city">Bekasi</span>
-                                        </div>
-                                    </div>
-                                    <div class="profile-info-row">
-                                        <div class="profile-info-name"> Umur </div>
-
-                                        <div class="profile-info-value">
-                                            <span class="editable" id="age">38</span>
-                                        </div>
-                                    </div>
-                                    <div class="profile-info-row">
-                                        <div class="profile-info-name"> Bergabung </div>
-                                        <div class="profile-info-value">
-                                            <span class="editable" id="signup">2014/06/20</span>
-                                        </div>
-                                    </div>
-                                    <div class="profile-info-row">
-                                        <div class="profile-info-name"> Last Online </div>
-                                        <div class="profile-info-value">
-                                            <span class="editable" id="login"><%= @user.last_sign_in_at %></span>
-                                        </div>
-                                    </div>
-                                    <div class="profile-info-row">
-                                        <div class="profile-info-name"> Quotes </div>
-                                        <div class="profile-info-value">
-                                            <span class="editable" id="about">
-                                                <% if @quotes != [] %>
-                                                    <%= @quotes.last.content %>
-                                                <% end %>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="space-20"></div>
-                                <div class="widget-box transparent">
-                                    <div class="widget-header widget-header-small">
-                                        <h4 class="widget-title blue smaller">
-                                            <i class="ace-icon fa fa-rss orange"></i>
-                                            Recent Activities
-                                        </h4>
-                                        <div class="widget-toolbar action-buttons">
-                                            <a href="#" data-action="reload">
-                                                <i class="ace-icon fa fa-refresh blue"></i>
-                                            </a>
-&nbsp;
-                                            <a href="#" class="pink">
-                                                <i class="ace-icon fa fa-trash-o"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="widget-body">
-                                        <div class="widget-main padding-8">
-                                            <div id="profile-feed-1" class="profile-feed">
-                                                <% @activities.each do |activity| %>
-                                                    <%= render_activity activity %>
-                                                <% end %>
-                                                <!-- <div class="profile-activity clearfix">
-                                                    <div>
-                                                        <img class="pull-left" alt="Susan Smith's avatar" src="images/avatar5.png" />
-                                                        <a class="user" href="#"> Susan Smith </a>
-                                                        is now friends with ariestiyansyah.
-                                                        <div class="time">
-                                                            <i class="ace-icon fa fa-clock-o bigger-110"></i>
-                                                            2 hours ago
-                                                        </div>
-                                                    </div>
-                                                    <div class="tools action-buttons">
-                                                        <a href="#" class="blue">
-                                                            <i class="ace-icon fa fa-pencil bigger-125"></i>
-                                                        </a>
-                                                        <a href="#" class="red">
-                                                            <i class="ace-icon fa fa-times bigger-125"></i>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <div class="profile-activity clearfix">
-                                                    <div>
-                                                        <i class="pull-left thumbicon fa fa-check btn-success no-hover"></i>
-                                                        <a class="user" href="#"> ariestiyansyah </a>
-                                                        joined
-                                                        <a href="#">Country Music</a>
-                                                        group.
-                                                        <div class="time">
-                                                            <i class="ace-icon fa fa-clock-o bigger-110"></i>
-                                                            5 hours ago
-                                                        </div>
-                                                    </div>
-                                                    <div class="tools action-buttons">
-                                                        <a href="#" class="blue">
-                                                            <i class="ace-icon fa fa-pencil bigger-125"></i>
-                                                        </a>
-                                                        <a href="#" class="red">
-                                                            <i class="ace-icon fa fa-times bigger-125"></i>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <div class="profile-activity clearfix">
-                                                    <div>
-                                                        <i class="pull-left thumbicon fa fa-picture-o btn-info no-hover"></i>
-                                                        <a class="user" href="#"> ariestiyansyah </a>
-                                                        uploaded a new photo.
-                                                        <a href="#">Take a look</a>
-
-                                                        <div class="time">
-                                                            <i class="ace-icon fa fa-clock-o bigger-110"></i>
-                                                            5 hours ago
-                                                        </div>
-                                                    </div>
-                                                    <div class="tools action-buttons">
-                                                        <a href="#" class="blue">
-                                                            <i class="ace-icon fa fa-pencil bigger-125"></i>
-                                                        </a>
-                                                        <a href="#" class="red">
-                                                            <i class="ace-icon fa fa-times bigger-125"></i>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <div class="profile-activity clearfix">
-                                                    <div>
-                                                        <img class="pull-left" alt="David Palms's avatar" src="images/avatar5.png" />
-                                                        <a class="user" href="#"> David Palms </a>
-                                                        left a comment on Alex's wall.
-                                                        <div class="time">
-                                                            <i class="ace-icon fa fa-clock-o bigger-110"></i>
-                                                            8 hours ago
-                                                        </div>
-                                                    </div>
-                                                    <div class="tools action-buttons">
-                                                        <a href="#" class="blue">
-                                                            <i class="ace-icon fa fa-pencil bigger-125"></i>
-                                                        </a>
-
-                                                        <a href="#" class="red">
-                                                            <i class="ace-icon fa fa-times bigger-125"></i>
-                                                        </a>
-                                                    </div>
-                                                </div>
-
-                                                <div class="profile-activity clearfix">
-                                                    <div>
-                                                        <i class="pull-left thumbicon fa fa-pencil-square-o btn-pink no-hover"></i>
-                                                        <a class="user" href="#"> ariestiyansyah </a>
-                                                        published a new blog post.
-                                                        <a href="#">Read now</a>
-
-                                                        <div class="time">
-                                                            <i class="ace-icon fa fa-clock-o bigger-110"></i>
-                                                            11 hours ago
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="tools action-buttons">
-                                                        <a href="#" class="blue">
-                                                            <i class="ace-icon fa fa-pencil bigger-125"></i>
-                                                        </a>
-
-                                                        <a href="#" class="red">
-                                                            <i class="ace-icon fa fa-times bigger-125"></i>
-                                                        </a>
-                                                    </div>
-                                                </div>
-
-                                                <div class="profile-activity clearfix">
-                                                    <div>
-                                                        <img class="pull-left" alt="ariestiyansyah's avatar" src="images/avatar5.png" />
-                                                        <a class="user" href="#"> ariestiyansyah </a>
-
-                                                        upgraded his skills.
-                                                        <div class="time">
-                                                            <i class="ace-icon fa fa-clock-o bigger-110"></i>
-                                                            12 hours ago
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="tools action-buttons">
-                                                        <a href="#" class="blue">
-                                                            <i class="ace-icon fa fa-pencil bigger-125"></i>
-                                                        </a>
-
-                                                        <a href="#" class="red">
-                                                            <i class="ace-icon fa fa-times bigger-125"></i>
-                                                        </a>
-                                                    </div>
-                                                </div>
-
-                                                <div class="profile-activity clearfix">
-                                                    <div>
-                                                        <i class="pull-left thumbicon fa fa-key btn-info no-hover"></i>
-                                                        <a class="user" href="#"> ariestiyansyah </a>
-
-                                                        logged in.
-                                                        <div class="time">
-                                                            <i class="ace-icon fa fa-clock-o bigger-110"></i>
-                                                            12 hours ago
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="tools action-buttons">
-                                                        <a href="#" class="blue">
-                                                            <i class="ace-icon fa fa-pencil bigger-125"></i>
-                                                        </a>
-
-                                                        <a href="#" class="red">
-                                                            <i class="ace-icon fa fa-times bigger-125"></i>
-                                                        </a>
-                                                    </div>
-                                                </div>
-
-                                                <div class="profile-activity clearfix">
-                                                    <div>
-                                                        <i class="pull-left thumbicon fa fa-power-off btn-inverse no-hover"></i>
-                                                        <a class="user" href="#"> ariestiyansyah </a>
-
-                                                        logged out.
-                                                        <div class="time">
-                                                            <i class="ace-icon fa fa-clock-o bigger-110"></i>
-                                                            16 hours ago
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="tools action-buttons">
-                                                        <a href="#" class="blue">
-                                                            <i class="ace-icon fa fa-pencil bigger-125"></i>
-                                                        </a>
-
-                                                        <a href="#" class="red">
-                                                            <i class="ace-icon fa fa-times bigger-125"></i>
-                                                        </a>
-                                                    </div>
-                                                </div> -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="center">
-                                    <button type="button" class="btn btn-sm btn-primary btn-white btn-round">
-                                        <i class="ace-icon fa fa-rss bigger-150 middle orange2"></i>
-                                        <span class="bigger-110">View more activities</span>
-
-                                        <i class="icon-on-right ace-icon fa fa-arrow-right"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- PAGE CONTENT ENDS -->
-                </div><!-- /.col -->
-            </div><!-- /.row -->
-                        </div><!-- /.box-body -->
-                    </div><!-- /.box -->
-                </section>
-    </aside><!-- /.right-side -->
-</div><!-- ./wrapper -->
+  <a href="" id="scroll-to-top" class="hidden-print"><i class="fa fa-chevron-up"></i></a>
+  
+  
+  
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  <%= javascript_include_tag "jquery-1.10.2.min" %>
+  <%= javascript_include_tag "bootstrap.min" %>
+  <%= javascript_include_tag 'chosen.jquery.min' %> 
+  <%= javascript_include_tag 'jquery.maskedinput.min' %>  
+  <%= javascript_include_tag 'bootstrap-datepicker.min' %>  
+  <%= javascript_include_tag 'bootstrap-timepicker.min' %>  
+  <%= javascript_include_tag 'bootstrap-slider.min' %>  
+  <%= javascript_include_tag 'jquery.tagsinput.min' %>  
+  <%= javascript_include_tag 'wysihtml5-0.3.0.min' %> 
+  <%= javascript_include_tag 'uncompressed/bootstrap-wysihtml5' %>  
+  <%= javascript_include_tag 'dropzone.min' %>  
+  <%= javascript_include_tag 'modernizr.min' %>
+  <%= javascript_include_tag 'pace.min' %>
+  <%= javascript_include_tag 'jquery.popupoverlay.min' %>
+  <%= javascript_include_tag 'jquery.slimscroll.min' %>
+  <%= javascript_include_tag 'jquery.cookie.min' %>
+  <%= javascript_include_tag "endless/endless_form" %>
+  <%= javascript_include_tag "endless/endless" %>
+  
+  </body>

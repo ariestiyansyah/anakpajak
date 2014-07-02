@@ -1,40 +1,48 @@
-<div class="padding-md">
-    <%= form_for @question do |f| %>
+<div id="breadcrumb">
+        <ul class="breadcrumb">
+           <li><i class="fa fa-bar-chart-o"></i><a href="index.html"> Buat Pertanyaan</a></li>
+ 
+        </ul>
+      </div><!-- breadcrumb -->
+      <div class="padding-md">
         <div class="row">
           <div class="col-lg-10">
             <div class="panel panel-default">
               <div class="panel-heading">
             Buat Pertanyaan
           </div>
-             
-        <div class="panel-body">
-        <div class="form-group">
-            <div class="col-md-12">
-                <%= f.text_field :title, class: "form-control", rows: "12", placeholder:"Subject" %>
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-md-12">
-                <%= f.text_area :content, id: "wysihtml5-textarea", placeholder: "Enter your text ...", class: "form-control", rows: "12" %>        
-            </div><!-- /.col -->
-        </div><!-- /form-group -->
-        <div class="form-group">
-            <div class="col-md-12">
-                <label>Tags</label>
-                <input type="text" class="tag-demo1" value="foo,bar,baz">
-            </div><!-- /.col -->
-        </div><!-- /form-group -->
-        </div>
-        </div>
+              <div class="panel-body">
+              <div class="form-group">
+                <div class="col-md-12">
+                  <textarea placeholder="Enter your text ..." class="form-control wysihtml5" rows="12" ></textarea>          
+                </div><!-- /.col -->
+              </div><!-- /form-group -->
+              <div class="form-group">
+                <div class="col-md-12">
+                  <label>Tags</label>
+                  <input type="text" class="tag-demo1" value="foo,bar,baz">
+                  
+                </div><!-- /.col -->
+              </div><!-- /form-group -->
+              </div>
+              </div>
             </div>
             <div class="col-lg-2">
             <div class="panel panel-default">
               <div class="panel-body">
                 <div>
-                  <button class="btn btn-danger block">Publish <i class="fa fa-arrow-circle-right"></i></button>
+                  <a class="btn btn-danger block">Publish <i class="fa fa-arrow-circle-right"></i></a>
                                     
                                 </div>
               </div></div></div>
         </div><!-- /.row -->
-        <% end %>
       </div><!-- /.padding-sm -->
+      <script type="text/javascript">
+  
+    $('.wysihtml5').each(function(i, elem) {
+      $(elem).wysihtml5();
+    });
+
+</script>
+  <%= javascript_include_tag "endless/endless_form" %>
+  <%#= javascript_include_tag "endless/endless" %>

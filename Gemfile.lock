@@ -33,6 +33,8 @@ GEM
     awesome_nested_fields (0.6.4)
       rails (>= 3.0.0)
     bcrypt (3.1.7)
+    bootstrap-wysihtml5-rails (0.3.2.100)
+      railties (>= 3.0)
     builder (3.1.4)
     carrierwave (0.10.0)
       activemodel (>= 3.2.0)
@@ -210,6 +212,7 @@ DEPENDENCIES
   acts_as_follower
   acts_as_votable
   awesome_nested_fields
+  bootstrap-wysihtml5-rails
   carrierwave
   coffee-rails (~> 4.0.0)
   debugger

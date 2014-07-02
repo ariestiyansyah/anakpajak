@@ -3,6 +3,7 @@ Myapp::Application.routes.draw do
   #get "home/index"
   root to: 'home#index'
   get   'kurs'        => 'home#kurs', as:"kurs"
+  
   resources :questions, only: [:index, :create, :update, :delete, :new, :show]  do
     resources :answers, only: [:index, :create, :update, :delete, :new]
   end
