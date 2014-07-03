@@ -22,6 +22,7 @@ Now running version alpha 1.0
 * Sublime Text
 * Firefox Browser
 * MySQL Database
+* Bitbucket
 
 ### Developer ###
 
