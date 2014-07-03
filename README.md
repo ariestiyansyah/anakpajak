@@ -1,29 +1,23 @@
-# README #
+# anakpajak.com Development #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+Social tax application for tax enthusiast 
 
-### What is this repository for? ###
+### Version ###
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+Now running version alpha 1.0
 
-### How do I get set up? ###
+### Platform using ###
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+* Rails
+* Ruby
+* Rake
+* Endless UI
+* Ubuntu Server
+* Sublime Text
+* Firefox Browser
+* MySQL Database
 
-### Contribution guidelines ###
+### Developer ###
 
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+* Rizky Ariestiyansyah <onto@evonestudio.com>
+* Aji Achmad Mustofa <aji.achmad@evonestudio.com>
