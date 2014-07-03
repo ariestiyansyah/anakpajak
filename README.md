@@ -1,6 +1,6 @@
 # anakpajak.com Development #
 
-Social tax application for tax enthusiast 
+Social Tax Application for tax enthusiast 
 
 ### Version ###
 
