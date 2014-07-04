@@ -2,17 +2,16 @@
 
 **Social Tax Application for Tax Enthusiast** 
 
-![10425659_4333677955549_544370933_n.jpg](https://bitbucket.org/repo/6A99xy/images/1086780375-10425659_4333677955549_544370933_n.jpg)
-
 ### Version ###
-
 Now running version alpha 1.0
 
-### Milestones ###
+## Project Schedules and Roadmap
+* [Schedule for upcoming Release](https://bitbucket.org/evonestudio/anakpajak/wiki/Releases)
+* [General Checklist for Maintenance Releases](https://bitbucket.org/evonestudio/anakpajak/wiki/Releases/Checklist)
+* [anakpajak Roadmap Strategy](https://bitbucket.org/evonestudio/anakpajak/wiki/Roadmap)
 
-* Version alpha 1.0 - 10 July 2014
-* Version alpha 2.0 - 20 July 2014
-* Version Beta 1.0 - 30 July 2014
+## Project Coordination Meetings
+Coming soon
 
 ### Platform using ###
 
