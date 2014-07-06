@@ -1,6 +1,8 @@
-$( "div#main-container" ).hide( "slow", function () {
-  $( "div#main-container" ).html("<%= escape_javascript(render 'form/question') %>", function () {
-    
-  });
-  $( "div#main-container" ).show( "slow" );
+$( "div#main-container" ).hide( "slow");
+$( "div#main-container" ).html(function (argument) {
+  return "<%= escape_javascript(render 'form/question') %>";
 });
+$("div#main-container").show("slow");
+
+
+

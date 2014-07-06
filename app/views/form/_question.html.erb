@@ -14,7 +14,7 @@
               <div class="panel-body">
               <div class="form-group">
                 <div class="col-md-12">
-                  <textarea placeholder="Enter your text ..." class="form-control wysihtml5" rows="12" ></textarea>          
+                  <textarea id="wysihtml5-textarea" placeholder="Enter your text ..." class="form-control" rows="12" ></textarea>          
                 </div><!-- /.col -->
               </div><!-- /form-group -->
               <div class="form-group">
@@ -37,12 +37,4 @@
               </div></div></div>
         </div><!-- /.row -->
       </div><!-- /.padding-sm -->
-      <script type="text/javascript">
-  
-    $('.wysihtml5').each(function(i, elem) {
-      $(elem).wysihtml5();
-    });
-
-</script>
-  <%= javascript_include_tag "endless/endless_form" %>
-  <%#= javascript_include_tag "endless/endless" %>
+<%= javascript_include_tag "endless/endless_form" %>

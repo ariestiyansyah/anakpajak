@@ -1,6 +1,7 @@
 Myapp::Application.routes.draw do
   devise_for :users, :controllers => { :registrations => "registrations", :omniauth_callbacks => "users/omniauth_callbacks" }
   #get "home/index"
+  
   root to: 'home#index'
   get   'kurs'        => 'home#kurs', as:"kurs"
   
@@ -23,6 +24,7 @@ Myapp::Application.routes.draw do
   resources :rules, only:[:index, :create, :update, :delete, :new, :show] do
   end
   get  'timeline'   => 'home#timeline', as:"timeline"
+  get  'login'      => 'home#login',    as:"login"
   # get  '/websocket' => redirect("ws://localhost:3000/websocket")
   get  ':username'  => 'users#profile', as: "profile"
 

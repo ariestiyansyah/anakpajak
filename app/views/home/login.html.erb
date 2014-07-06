@@ -1,0 +1,135 @@
+<% content_for :style do %>
+  <%= stylesheet_link_tag "bootstrap.min" %>
+  <%= stylesheet_link_tag "font-awesome.min" %>
+  <%= stylesheet_link_tag "pace" %>
+  <%= stylesheet_link_tag "endless.min" %>
+  <%= stylesheet_link_tag "endless-landing.min" %>
+<% end %>
+  <body class="overflow-hidden">
+  <div id="overlay" class="transparent"></div>
+
+  <div id="wrapper" class="preload">
+    <header class="navbar navbar-fixed-top bg-white">
+      <div class="container">
+        <div class="navbar-header">
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="#" class="navbar-brand"><span class="text-danger">anakpajak</span></a>
+        </div>
+        <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+          <div class="panel-body pull-right">
+            <%= form_for(@user, :as => :user, :url => session_path(:user),html:{class: "form-inline no-margin"}) do |f| %>
+              <div class="form-group">
+                  <%= f.label :email, class: "sr-only" %>
+                  <%= f.email_field :email, :autofocus => true, class: "form-control input-sm", placeholder: "Email Address" %>
+              </div><!-- /form-group -->
+              <div class="form-group">
+                  <%= f.label :password, class: "sr-only" %>
+                  <%= f.password_field :password, :autofocus => true, class: "form-control input-sm", placeholder: "Email Address" %>
+              </div><!-- /form-group -->
+              <div class="checkbox">
+                  <label class="label-checkbox">
+                  <input type="checkbox" checked/>
+                  <span class="custom-checkbox"></span>
+                   Remember me<br/>
+                </label>
+              </div><!-- /checkbox -->
+              <button type="submit" class="btn btn-sm btn-danger">Sign in</button>
+              <button type="submit" class="btn btn-sm btn-danger">Sign Up</button>
+            <% end %>
+          </div>
+        </nav>
+      </div>
+    </header>
+    
+    <div id="landing-content">          
+      <div class="bg-white text-center content-padding">
+        <div class="container">
+          <%= image_tag("img/screenshot.jpg", alt: "Photo of Blog", class: "fadeInRightLarge no-animation animated-element m-top-md animation-delay1" ) %>         
+        </div>
+      </div>        
+    </div><!-- /landing-content -->
+    
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-3 padding-md">
+            <p class="font-lg">About Our Company</p>
+            <p><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum auctor suscipit lobortis.</small></p>
+          </div><!-- /.col -->
+          <div class="col-sm-3 padding-md">
+            <p class="font-lg">Useful Links</p>
+            <ul class="list-unstyled useful-link">
+              <li>
+                <a href="#">
+                  <small><i class="fa fa-chevron-right"></i> Our Profile</small>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <small><i class="fa fa-chevron-right"></i> New Products</small>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <small><i class="fa fa-chevron-right"></i> Support Portal</small>
+                </a>
+              </li>
+            </ul>
+          </div><!-- /.col -->
+          <div class="col-sm-3 padding-md">
+            <p class="font-lg">Stay Connect</p>
+            <a href="#" class="social-connect tooltip-test facebook-hover pull-left m-right-xs" data-toggle="tooltip" data-original-title="Facebook"><i class="fa fa-facebook"></i></a>
+            <a href="#" class="social-connect tooltip-test twitter-hover pull-left m-right-xs" data-toggle="tooltip" data-original-title="Twitter"><i class="fa fa-twitter"></i></a>
+            <a href="#" class="social-connect tooltip-test google-plus-hover pull-left m-right-xs" data-toggle="tooltip" data-original-title="Google Plus"><i class="fa fa-google-plus"></i></a>
+            <a href="#" class="social-connect tooltip-test rss-hover pull-left m-right-xs" data-toggle="tooltip" data-original-title="Rss feed"><i class="fa fa-rss"></i></a>
+            <a href="#" class="social-connect tooltip-test tumblr-hover pull-left m-right-xs" data-toggle="tooltip" data-original-title="Tumblr"><i class="fa fa-tumblr"></i></a>
+            <a href="#" class="social-connect tooltip-test dribbble-hover pull-left m-right-xs" data-toggle="tooltip" data-original-title="Dribbble"><i class="fa fa-dribbble"></i></a>
+            <a href="#" class="social-connect tooltip-test linkedin-hover pull-left m-right-xs" data-toggle="tooltip" data-original-title="Linkedin"><i class="fa fa-linkedin"></i></a>
+            <a href="#" class="social-connect tooltip-test pinterest-hover pull-left" data-toggle="tooltip" data-original-title="Pinterest"><i class="fa fa-pinterest"></i></a>
+          </div><!-- /.col -->
+          <div class="col-sm-3 padding-md">
+            <p class="font-lg">Contact Us</p>
+            Email : endless.themes@gmail.com
+            <div class="seperator"></div>
+            <a class="btn btn-info"><i class="fa fa-envelope"></i> Contact support</a>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div>
+    </footer>
+  </div><!-- /wrapper -->
+
+  <a href="" id="scroll-to-top" class="hidden-print"><i class="fa fa-chevron-up"></i></a>
+  
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  
+  <!-- Jquery -->
+  <%= javascript_include_tag "jquery-1.10.2.min" %>
+  <%= javascript_include_tag "bootstrap.min" %>
+  <%= javascript_include_tag 'waypoints.min' %> 
+  <%= javascript_include_tag 'jquery.localscroll.min' %> 
+  <%= javascript_include_tag 'jquery.scrollTo.min' %> 
+  <%= javascript_include_tag 'modernizr.min' %>
+  <%= javascript_include_tag 'pace.min' %>
+  <%= javascript_include_tag 'jquery.popupoverlay.min' %>
+  <%= javascript_include_tag 'jquery.slimscroll.min' %>
+  <%= javascript_include_tag 'jquery.cookie.min' %>
+  <%= javascript_include_tag "endless/endless" %>
+  <script>
+    $(function()  {
+      $('.animated-element').waypoint(function() {
+        
+        $(this).removeClass('no-animation');
+        
+      }, { offset: '70%' });
+      
+      $('.nav').localScroll({duration:800});
+    });
+  </script>
+  </body>
