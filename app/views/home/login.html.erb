@@ -24,8 +24,8 @@
           <div class="panel-body pull-right">
             <%= form_for(@user, :as => :user, :url => session_path(:user),html:{class: "form-inline no-margin"}) do |f| %>
               <div class="form-group">
-                  <%= f.label :email, class: "sr-only" %>
-                  <%= f.email_field :email, :autofocus => true, class: "form-control input-sm", placeholder: "Email Address" %>
+                  <%= f.label :login, class: "sr-only" %>
+                  <%= f.text_field :login, :autofocus => true, class: "form-control input-sm", placeholder: "User ID" %>
               </div><!-- /form-group -->
               <div class="form-group">
                   <%= f.label :password, class: "sr-only" %>

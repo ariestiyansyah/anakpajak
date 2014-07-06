@@ -11,5 +11,6 @@ class HomeController < ApplicationController
     @template   = "timeline"
   end
   def login
+    @user = User.new
   end
 end
