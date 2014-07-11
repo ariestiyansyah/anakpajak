@@ -1,8 +1,11 @@
-$( "div#main-container" ).hide( "slow");
-$( "div#main-container" ).html(function (argument) {
-  return "<%= escape_javascript(render 'form/question') %>";
+// $( "div#main-container" ).contents("slow").remove();
+// $( "div#main-container" ).hide("slow",function () {
+// });
+// $( "div#main-container" ).html(function (argument) {
+//   return "<%#= escape_javascript(render 'form/question') %>";
+// });
+// $("div#main-container").show("slow");
+$( "div#main-container" ).hide(500, function () {
+  $( "div#main-container" ).html("<%= escape_javascript(render 'form/question') %>").fadeIn().delay(2000) ;
 });
-$("div#main-container").show("slow");
-
-
 

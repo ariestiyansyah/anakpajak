@@ -1,4 +1,4 @@
 $( "div#main-container" ).hide( "slow", function () {
-  $( "div#main-container" ).html("<%= escape_javascript(render 'main_form/index_timeline') %>");
-  $( "div#main-container" ).show( "slow" );
+  $( "div#main-container" ).html("<%= escape_javascript(render 'main_form/index_timeline') %>").fadeIn().delay(2000);
+  // $( "div#main-container" ).show( "slow" );
 });
