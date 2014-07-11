@@ -18,12 +18,12 @@ class ApplicationController < ActionController::Base
   end
   protected
     
-    def authenticate_user!
-      unless user_signed_in?
-        @user = User.new
-        render "home/login"
-      end
-    end
+    # def authenticate_user!
+    #   unless user_signed_in?
+    #     @user = User.new
+    #     render "home/login"
+    #   end
+    # end
 
     def configure_permitted_parameters
       devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:username, :email, :password, :password_confirmation, :remember_me) }

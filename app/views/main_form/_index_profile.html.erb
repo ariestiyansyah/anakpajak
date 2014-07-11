@@ -15,12 +15,18 @@
           </a>
         </li>
         <li>
-          <a href="#edit" data-toggle="tab">
+          <!-- <a href="#edit" data-toggle="tab">
             <span class="block text-center">
               <i class="fa fa-edit fa-2x"></i> 
             </span>
             Edit Profile
-          </a>
+          </a> -->
+          <%= link_to(edit_user_registration_path+"#edit", remote: true, data:{toggle:"tab"} ) do %>
+                <span class="block text-center">
+              <i class="fa fa-edit fa-2x"></i> 
+            </span>
+            Edit Profile
+              <% end %>
         </li>
         <li>
           <a href="#message" data-toggle="tab">
@@ -155,85 +161,25 @@
                 </div><!-- /.row -->
               </div><!-- /tab1 -->
               <div class="tab-pane fade" id="edit">
-                
                 <div class="row">
                   <div class="panel panel-info pull-right">
                     <div class="panel-body">
-                      Last Update on 12 Oct,2013
+                      Last Update on <%= current_user.updated_at.strftime("%d %B, %Y") %><!-- 12 Oct,2013 -->
                     </div>
                   </div><!-- /panel -->
-                </div><!-- /.row -->
-                
-                <div class="panel panel-default">
-                  <form class="form-horizontal form-border">
-                    <div class="panel-heading">
-                      Basic Information
-                    </div>
-                    <div class="panel-body">
-                      <div class="form-group">
-                        <label class="control-label col-md-2">Username</label>                        
-                        <div class="col-md-10">
-                          <input type="text" class="form-control input-sm" placeholder="Username" value="John Doe">
-                        </div><!-- /.col -->
-                      </div><!-- /form-group -->
-                      <div class="form-group">
-                        <label class="control-label col-md-2">Password</label>
-                        <div class="col-md-10">
-                          <input type="password" class="form-control input-sm" value="Password">
-                        </div><!-- /.col -->
-                      </div><!-- /form-group -->
-                      <div class="form-group">
-                        <label class="control-label col-md-2">Email</label>
-                        <div class="col-md-10">
-                          <input type="text" class="form-control input-sm" value="john_doe@email.com">
-                        </div><!-- /.col -->
-                      </div><!-- /form-group -->
-                      <div class="form-group">
-                        <label class="control-label col-md-2">Gender</label>
-                        <div class="col-md-10">
-                          <label class="label-radio inline">
-                            <input type="radio" name="inline-radio" checked>
-                            <span class="custom-radio"></span>
-                            Male
-                          </label>
-                          <label class="label-radio inline">
-                            <input type="radio" name="inline-radio">
-                            <span class="custom-radio"></span>
-                            Female
-                          </label>
-                        </div><!-- /.col -->
-                      </div><!-- /form-group -->
-                      <div class="form-group">
-                        <label class="control-label col-md-2">Address</label>
-                        <div class="col-md-10">
-                          <textarea class="form-control" rows="3"></textarea>
-                        </div><!-- /.col -->
-                      </div><!-- /form-group -->
-                      <div class="form-group">
-                        <label class="control-label col-md-2">Phone</label>
-                        <div class="col-md-10">
-                          <input type="text" class="form-control input-sm">
-                        </div><!-- /.col -->
-                      </div><!-- /form-group -->
-                    </div>
-                    <div class="panel-footer">
-                      <div class="text-right">
-                        <button class="btn btn-sm btn-success">Update</button>
-                        <button class="btn btn-sm btn-success" type="reset">Reset</button>
-                      </div>
-                    </div>
-                  </form>
+                </div><!-- /.row -->      
+                <div class="panel panel-default" id="edit_form">
+                  
                 </div><!-- /panel -->
-              
-                <div class="panel panel-default">
+                <!-- <div class="panel panel-default">
                   <div class="panel-body padding-xs">
                     <textarea class="form-control no-border no-shadow" rows="2" placeholder="What's on your mind?"></textarea>
                   </div>
                   <div class="panel-footer clearfix">
                     <a class="btn btn-xs btn-success pull-right">Post</a>
                   </div>
-                </div><!-- /panel -->
-                <div class="panel panel-default">
+                </div> --><!-- /panel -->
+                <!-- <div class="panel panel-default">
                   <div class="panel-heading">
                     About Me
                   </div>
@@ -243,9 +189,9 @@
                   <div class="panel-footer clearfix">
                     <a class="btn btn-xs btn-success pull-right">Save</a>
                   </div>
-                </div><!-- /panel -->
+                </div> --><!-- /panel -->
                   
-                <div class="panel panel-default">
+                <!-- <div class="panel panel-default">
                   <div class="panel-heading">
                     Products
                   </div>
@@ -317,7 +263,7 @@
                     <a class="btn btn-sm btn-success"><i class="fa fa-plus"></i> Add Product</a>
                     <a class="btn btn-sm btn-danger"><i class="fa fa-trash-o"></i> Delete</a>
                   </div>
-                </div><!-- panel -->
+                </div> --><!-- panel -->
               </div><!-- /tab2 -->
               <div class="tab-pane fade" id="message">
                 <div class="panel panel-default inbox-panel">
