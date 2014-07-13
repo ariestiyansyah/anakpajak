@@ -26,7 +26,9 @@
                             </div><!-- /.col -->
                             <div class="col-md-4">
                                 <div class="headline">
-                                    <a class="btn btn-sm btn-danger block" href="<%= new_question_path %>"><i class="fa fa-plus"></i> Buat Article</a>
+                                    <%= link_to( new_article_path, remote: true, class: "btn btn-sm btn-danger block") do %>
+                                        <i class="fa fa-plus"></i> Buat Article
+                                      <% end %>
                                 </div>
                                 <form>
                                     <div class="form-group">
