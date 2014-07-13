@@ -20,6 +20,7 @@
           </button>
           <a href="#" class="navbar-brand"><span class="text-danger">anakpajak</span></a>
         </div>
+        <%= render 'layouts/messages' %>
         <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
           <div class="panel-body pull-right">
             <%= form_for(@user, :as => :user, :url => session_path(:user),html:{class: "form-inline no-margin"}) do |f| %>
@@ -39,7 +40,7 @@
                 </label>
               </div><!-- /checkbox -->
               <button type="submit" class="btn btn-sm btn-danger">Sign in</button>
-              <button type="submit" class="btn btn-sm btn-danger">Sign Up</button>
+              <a href="<%= new_user_session_path %>" type="submit" class="btn btn-sm btn-danger">Sign Up</a>
             <% end %>
           </div>
         </nav>

@@ -1,0 +1,43 @@
+<div class="form-box" id="login-box">
+  <div class="header">Masuk</div>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="body bg-gray">
+      <% flash.each do |name, msg| %>
+        <% if msg.is_a?(String) %>
+          <div class="alert alert-warning alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <strong><%= content_tag :div, msg, :class => "flash_#{name}" %></strong>
+          </div>
+         <% end %>
+      <% end %>
+      <div class="form-group">
+        <%= f.text_field :login, autofocus: true, class: "form-control", placeholder: "User ID" %>
+      </div>
+      <div class="form-group">
+        <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Password" %>
+      </div>
+      <% if devise_mapping.rememberable? -%>
+        <div><%= f.check_box :remember_me %> <%= f.label "Ingat Saya" %></div>
+      <% end -%>
+    </div>
+    <div class="footer">
+      <button type="submit" class="btn bg-olive btn-block">Masuk</button>
+      <%= render "users/shared/links" %>
+      <%#= f.submit "Sign in" %>
+    </div>
+  <% end %>
+  <div class="margin text-center">
+      <span>Daftar menggunakan social networks</span>
+      <br/>
+      <%= link_to user_omniauth_authorize_path(:facebook), :class => 'btn bg-light-blue btn-circle' do %>
+          <i class="fa fa-facebook"></i>
+      <% end %>
+      <!-- <button class="btn bg-light-blue btn-circle"><i class="fa fa-facebook"></i></button> -->
+      <button class="btn bg-aqua btn-circle"><i class="fa fa-twitter"></i></button>
+      <button class="btn bg-red btn-circle"><i class="fa fa-google-plus"></i></button>
+
+  </div>
+</div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+<%= javascript_include_tag "bootstrap.min" %>
+

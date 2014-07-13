@@ -1,50 +1,35 @@
-        <div class="wrapper row-offcanvas row-offcanvas-left">
-            <!-- Left side column. contains the logo and sidebar -->
-            <%= render "form/sidebar"%>
-            <!-- Right side column. Contains the navbar and content of the page -->
-            <aside class="right-side">
-                <!-- Content Header (Page header) -->
-                <section class="content-header">
-                    <h1>
-                        <i class="ion ion-chatbubble-working"></i> Tanya Pajak
-                    </h1>
-                </section>
+<div class="wrapper row-offcanvas row-offcanvas-left">
+<%= render "form/sidebar"%>
+<aside class="right-side">
+<section class="content-header">
+<h1>
+<i class="ion ion-chatbubble-working"></i> Tanya Pajak
+</h1>
+</section>
+<section class="content">
+<div class="box box-primary">
+<div class="box-header">
+<h3 class="box-title"></h3>
+<div class="box-tools pull-right">
+<a href="<%= new_question_path %>"><button class="btn btn-default pull-right"><i class="fa fa-plus"></i> Add item</button></a>
 
-                <!-- Main content -->
-                <section class="content">
-                            <!-- TO DO List -->
-                            <div class="box box-primary">
-                                <div class="box-header">
-                                    <h3 class="box-title"></h3>
-                                    <div class="box-tools pull-right">
-                                        <a href="<%= new_question_path %>"><button class="btn btn-default pull-right"><i class="fa fa-plus"></i> Add item</button></a>
-                                        
-                                    </div>
-                                </div><!-- /.box-header -->
-                                <div class="box-body">
-                                    <ul class="todo-list" id="list_question">
-                                        <%= render "form/list_question"%>    
-                                    </ul>
-                                </div><!-- /.box-body -->
-
-                                <div class="box-footer clearfix no-border">
-                                    <div class="box-tools pull-right">
-                                        <ul class="pagination pagination-sm inline" id="load_more">
-                                            <%= render "form/link_load_more_question"%>      
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div><!-- /.box -->
-                        </section><!-- right col -->
-                    </div><!-- /.row (main row) -->
-
-                </section><!-- /.content -->
-            </aside><!-- /.right-side -->
-        </div><!-- ./wrapper -->
-
-        <!-- add new calendar event modal -->
-
-
-        <!-- jQuery 2.0.2 -->
-        
-        
+</div>
+</div>
+<div class="box-body">
+<ul class="todo-list" id="list_question">
+<%= render "form/list_question"%>    
+</ul>
+</div>
+<div class="box-footer clearfix no-border">
+<div class="box-tools pull-right">
+<ul class="pagination pagination-sm inline" id="load_more">
+<%= render "form/link_load_more_question"%>      
+</ul>
+</div>
+</div>
+</div>
+</section>
+</div>
+</section>
+</aside>
+</div>
