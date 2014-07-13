@@ -16,7 +16,7 @@ class QuestionsController < ApplicationController
     question.user = current_user
     respond_to do |format|
       if question.save
-        question.create_activity key: 'article.commented_on', owner: current_user
+        #question.create_activity key: 'article.commented_on', owner: current_user
         format.html { redirect_to root_path }
       else
       end

@@ -25,9 +25,8 @@ Myapp::Application.routes.draw do
   end
   get  'timeline'   => 'home#timeline', as:"timeline"
   get  'login'      => 'home#login',    as:"login"
-  # get  '/websocket' => redirect("ws://localhost:3000/websocket")
-  get  ':username'  => 'users#profile', as: "profile"
-
+  get  ':username'  => 'users#profile', as: "profile", constraints: {username: /((?!websocket).)*/}
+  # get '/:hash', to: 'conversations#show', constraints: {hash: /((?!websocket).)*/}
 
   
 

@@ -20,6 +20,13 @@
 //= require bootstrap-wysihtml5
 //= require bootstrap-wysihtml5/locales
 
+var dispatcher = new WebSocketRails('localhost:3000/websocket');
+channel = dispatcher.subscribe('orders');
+channel.bind('new', function(order) {
+  console.log('a new order about '+order.id+' arrived!');
+  // $(".order-body").append("<tr><td>" + order.name+ "</td><td> " + order.number + "</td></tr>");
+})
+
 // var dispatcher = new WebSocketRails('microlabil.com:3001/websocket');
 // channel = dispatcher.subscribe('articles');
 // channel.bind('new', function(article) {
