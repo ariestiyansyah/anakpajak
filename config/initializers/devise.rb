@@ -13,7 +13,7 @@ Devise.setup do |config|
   config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
 
   # Configure the class responsible to send e-mails.
-  # config.mailer = 'Devise::Mailer'
+  config.mailer = "CustomMailer"
 
   # ==> ORM configuration
   # Load and configure the ORM. Supports :active_record (default) and
@@ -254,12 +254,18 @@ Devise.setup do |config|
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
 
-  require "omniauth-facebook"
+  # require "omniauth-facebook"
+  # # config.omniauth :facebook, "670970939657257", "1f7c3f355b21976e5be922befd413e70"
   # config.omniauth :facebook, "670970939657257", "1f7c3f355b21976e5be922befd413e70"
-  config.omniauth :facebook, "670970939657257", "1f7c3f355b21976e5be922befd413e70"
-  require "omniauth-google-oauth2"
-  config.omniauth :google_oauth2, "APP_ID", "APP_SECRET", { access_type: "offline", approval_prompt: "" }
-  require 'omniauth-twitter'
-  config.omniauth :twitter ,"APP_ID", "APP_SECRET"
+  # require "omniauth-google-oauth2"
+  # config.omniauth :google_oauth2, "APP_ID", "APP_SECRET", { access_type: "offline", approval_prompt: "" }
+  # require 'omniauth-twitter'
+  # config.omniauth :twitter ,"APP_ID", "APP_SECRET"
+
+  Devise.setup do |config|
+    config.omniauth :facebook, "670970939657257", "8155ccdaccbae854e4e6dd817397227d"
+    config.omniauth :twitter, "tLTBxmTVxvdIr1Ge3LVuZZ7XC", "mBOLsok7BMSFVEcSQ07hzKL6wpYjxiPwgHX09mQEXYwjZq61vs"
+    # config.omniauth :linked_in, "KEY", "SECRET"
+  end
   
 end

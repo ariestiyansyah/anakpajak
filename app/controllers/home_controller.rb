@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
   before_action :authenticate_user!
+  before_filter :ensure_signup_complete #, only: [:new, :create, :update, :destroy]
   
   # before_filter :authenticate_user!
   def index

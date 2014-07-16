@@ -4,7 +4,7 @@ Myapp::Application.routes.draw do
   
   root to: 'home#index'
   get   'kurs'        => 'home#kurs', as:"kurs"
-  
+
   resources :questions, only: [:index, :create, :update, :delete, :new, :show]  do
     resources :answers, only: [:index, :create, :update, :delete, :new]
   end
@@ -23,6 +23,8 @@ Myapp::Application.routes.draw do
   end
   resources :rules, only:[:index, :create, :update, :delete, :new, :show] do
   end
+  match '/profile/:id/finish_signup'      => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
+  get  '/profile/:id/finish_confirmation' => 'users#finish_confirmation', as:"finish_confirmation"
   get  'timeline'   => 'home#timeline', as:"timeline"
   get  'login'      => 'home#login',    as:"login"
   get  ':username'  => 'users#profile', as: "profile", constraints: {username: /((?!websocket).)*/}
