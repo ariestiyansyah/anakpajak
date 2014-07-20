@@ -1,1 +1,4 @@
-alert("hai");
+$( "div#main-container" ).hide( "slow", function () {
+  $( "div#main-container" ).html("<%= escape_javascript(render 'main_form/show_question') %>").fadeIn().delay(2000);
+  // $( "div#main-container" ).show( "slow" );
+});

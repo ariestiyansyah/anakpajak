@@ -1,8 +1,12 @@
 <%= form_for @answer_new, url: question_answers_path(@question), remote: true do |f| %>
-    <div class="input-group">
-        <%= f.text_field :content, class: "form-control", placeholder:"Jawab....." %>
-        <div class="input-group-btn">
-            <button class="btn btn-success"><i class="fa fa-plus"></i></button>
-        </div>
-    </div>
+  <div class="panel-body">
+    <div class="form-group">
+      <div class="col-md-12">
+        <%= f.text_area :content, class: "form-control", placeholder:"Jawab.....", id: "wysihtml5-textarea", rows: "12" %>
+      </div><!-- /.col -->
+    </div><!-- /form-group -->
+  </div>
+  <div>
+    <button class="btn btn-sm btn-danger block"><i class="fa fa-thumb-tack"></i> Jawab</button>
+  </div>
 <% end %>

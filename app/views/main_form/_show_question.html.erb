@@ -1,0 +1,85 @@
+<div id="breadcrumb">
+                <ul class="breadcrumb">
+                     <li><i class="fa fa-bar-chart-o"></i><a href="index.html"> Jawab Pertanyaan</a></li>
+                </ul>
+            </div><!-- breadcrumb -->    
+            <div class="padding-md">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="panel panel-default">
+                            <div class="panel-body">    
+
+                                <div class="search-container">
+                            <div class="panel panel-default">
+                                <div class="panel-body">    
+                                    <div class="search-header">
+                                        <a href="#" class="h4 inline-block"><%= @question.title %></a>
+                                        <div class="text-muted"><%= @question.user.username %></div>
+                                    </div>
+                                    
+                                    <div class="seperator"></div>
+                                    
+                                    <p class="m-top-sm">
+                                        <a href="#" class="pull-left avatar m-right-sm"> 
+                                            <img src="img/user2.jpg" alt="Author"> 
+                                        </a>
+                                        <%= raw @question.content %>
+                                    </p>
+                                    
+                                    <!-- <div class="text-right">
+                                        <a class="btn btn-sm btn-danger"><i class="fa fa-save fa-lg"></i> Save</a>
+                                        <a class="btn btn-sm btn-success"><i class="fa fa-star"></i> Star</a>
+                                    </div> -->
+                                </div>
+                            </div><!-- /panel -->
+                        </div><!-- /search-container -->
+                                  
+                    <div class="chat-message">
+                        <ul class="chat" id="list-answer">
+                            <% @answers.each do |answer| %>
+                                <%= render partial: "list/answer", locals: {answer: answer} %>
+                            <% end %> 
+                        </ul>
+                            <div class="panel panel-default">
+                            <div class="panel-heading">
+                                Jawab Pertanyaan
+                            </div>
+                                <%= render "form/answer"%>
+                            </div>
+                    </div>  
+                </div>
+            </div>
+                        
+                        
+                    </div><!-- /.col -->
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="panel panel-default">
+                            <div class="panel-heading">Ads</div>
+                            <div class="panel-body">
+                            <div class="col-md-6">
+                                <h5 class="text-muted">Advertisement</h5>
+                                <img data-src="holder.js/150x150" alt="Advertisement" src=".">
+                            </div><!-- /.col -->
+                            <div class="col-md-6">
+                                <h5 class="text-muted">Advertise with us</h5>
+                                <img data-src="holder.js/150x150" alt="Advertisement" src=".">
+                            </div><!-- /.col -->
+                            
+                            <div class="col-md-12 m-top-md">
+                                <a href="#" class="h5 block m-bottom-sm">Wrapbootstrap.com</a>
+                                <img data-src="holder.js/350x200" alt="Advertisement" src=".">
+                            </div>
+                            
+                            <div class="col-md-12 m-top-md">
+                                <img data-src="holder.js/350x200" alt="Advertisement" src=".">
+                            </div>
+                            </div>
+                        </div>
+                        </div><!-- /.row -->
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+            </div><!-- /.padding-sm -->
+<%= javascript_include_tag "endless/endless_form" %>
+    <%= javascript_include_tag "uncompressed/holder" %>
+

@@ -1,14 +1,18 @@
-<div class="item">
-    <img src="images/avatar5.png" alt="user image" class="offline"/>
-    <p class="message">
-        <a href="#" class="name">
-            <small class="text-muted pull-right"><i class="fa fa-clock-o"></i> 5:30</small>
-            <%= @answer.user.username %>
-        </a>
-        <%= raw(@answer.content) %>
-    </p>
-    <div class="tools">
-            <i class="glyphicon glyphicon-ok"></i>
-            <i class="glyphicon glyphicon-edit"></i>
+<li class="left clearfix">
+    <span class="chat-img pull-left">
+        <img src="img/user.jpg" alt="User Avatar">
+    </span>
+    <div class="chat-body clearfix">
+        <div class="header">
+            <strong class="primary-font"><%= answer.user.username %></strong>
+            <small class="pull-right text-muted"><i class="fa fa-clock-o"></i> 12 mins ago</small>
         </div>
-</div>
+        <p>
+            <%= raw(answer.content) %>
+        </p>
+        <div class="text-right">
+            <a class="btn btn-sm btn-danger"><i class="fa fa-thumbs-down"></i> Unlike</a>
+            <a class="btn btn-sm btn-success"><i class="fa fa-star"></i> Star</a>
+        </div>
+    </div>
+</li>
