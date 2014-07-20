@@ -1,28 +1,23 @@
 <% content_for :style do %>
-  <%= stylesheet_link_tag "bootstrap.min" %>
   <%= stylesheet_link_tag "font-awesome.min" %>
-  <%= stylesheet_link_tag "pace" %>
-  <%= stylesheet_link_tag "endless.min" %>
-  <%= stylesheet_link_tag "endless-landing.min" %>
+  <%= stylesheet_link_tag "normalize" %>
+  <%= stylesheet_link_tag "myhome" %>
 <% end %>
-  <body class="overflow-hidden">
-  <div id="overlay" class="transparent"></div>
-
-  <div id="wrapper" class="preload">
-    <header class="navbar navbar-fixed-top bg-white">
-      <div class="container">
-        <div class="navbar-header">
-          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a href="#" class="navbar-brand"><span class="text-danger">anakpajak</span></a>
+<body>
+<div id="header">
+  <div class="thick_header">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-4 logo-holder">
+          <a href="/" class="logo-link">
+            <div class="logo-img sprite-crown_30"></div>
+            <span class="logo-name">
+              anakpajak
+              <span class="logo-beta">BETA</span>
+            </span>
+          </a>
         </div>
-        <%= render 'layouts/messages' %>
-        <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
-          <div class="panel-body pull-right">
+        <div class="col-xs-12 col-sm-8 navigations">
             <%= form_for(@user, :as => :user, :url => session_path(:user),html:{class: "form-inline no-margin"}) do |f| %>
               <div class="form-group">
                   <%= f.label :login, class: "sr-only" %>
@@ -30,7 +25,7 @@
               </div><!-- /form-group -->
               <div class="form-group">
                   <%= f.label :password, class: "sr-only" %>
-                  <%= f.password_field :password, :autofocus => true, class: "form-control input-sm", placeholder: "Email Address" %>
+                  <%= f.password_field :password, :autofocus => true, class: "form-control input-sm", placeholder: "Password" %>
               </div><!-- /form-group -->
               <div class="checkbox">
                   <label class="label-checkbox">
@@ -39,98 +34,104 @@
                    Remember me<br/>
                 </label>
               </div><!-- /checkbox -->
-              <button type="submit" class="btn btn-sm btn-danger">Sign in</button>
-              <a href="<%= new_user_registration_path %>" type="submit" class="btn btn-sm btn-danger">Sign Up</a>
+              <button type="submit" class="btn btn-sm btn-default">Sign in</button>
             <% end %>
-          </div>
-        </nav>
-      </div>
-    </header>
-    
-    <div id="landing-content">          
-      <div class="bg-white text-center content-padding">
-        <div class="container">
-          <%= image_tag("img/screenshot.jpg", alt: "Photo of Blog", class: "fadeInRightLarge no-animation animated-element m-top-md animation-delay1" ) %>         
         </div>
-      </div>        
-    </div><!-- /landing-content -->
-    
-    <footer>
+      </div>
+    </div>
+  </div>
+
+  
+</div>
+<div id="main">
+  <div class="section gray section-intro">
+    <div class="background"></div>
       <div class="container">
         <div class="row">
-          <div class="col-sm-3 padding-md">
-            <p class="font-lg">About Our Company</p>
-            <p><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum auctor suscipit lobortis.</small></p>
-          </div><!-- /.col -->
-          <div class="col-sm-3 padding-md">
-            <p class="font-lg">Useful Links</p>
-            <ul class="list-unstyled useful-link">
-              <li>
-                <a href="#">
-                  <small><i class="fa fa-chevron-right"></i> Our Profile</small>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <small><i class="fa fa-chevron-right"></i> New Products</small>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <small><i class="fa fa-chevron-right"></i> Support Portal</small>
-                </a>
-              </li>
-            </ul>
-          </div><!-- /.col -->
-          <div class="col-sm-3 padding-md">
-            <p class="font-lg">Stay Connect</p>
-            <a href="#" class="social-connect tooltip-test facebook-hover pull-left m-right-xs" data-toggle="tooltip" data-original-title="Facebook"><i class="fa fa-facebook"></i></a>
-            <a href="#" class="social-connect tooltip-test twitter-hover pull-left m-right-xs" data-toggle="tooltip" data-original-title="Twitter"><i class="fa fa-twitter"></i></a>
-            <a href="#" class="social-connect tooltip-test google-plus-hover pull-left m-right-xs" data-toggle="tooltip" data-original-title="Google Plus"><i class="fa fa-google-plus"></i></a>
-            <a href="#" class="social-connect tooltip-test rss-hover pull-left m-right-xs" data-toggle="tooltip" data-original-title="Rss feed"><i class="fa fa-rss"></i></a>
-            <a href="#" class="social-connect tooltip-test tumblr-hover pull-left m-right-xs" data-toggle="tooltip" data-original-title="Tumblr"><i class="fa fa-tumblr"></i></a>
-            <a href="#" class="social-connect tooltip-test dribbble-hover pull-left m-right-xs" data-toggle="tooltip" data-original-title="Dribbble"><i class="fa fa-dribbble"></i></a>
-            <a href="#" class="social-connect tooltip-test linkedin-hover pull-left m-right-xs" data-toggle="tooltip" data-original-title="Linkedin"><i class="fa fa-linkedin"></i></a>
-            <a href="#" class="social-connect tooltip-test pinterest-hover pull-left" data-toggle="tooltip" data-original-title="Pinterest"><i class="fa fa-pinterest"></i></a>
-          </div><!-- /.col -->
-          <div class="col-sm-3 padding-md">
-            <p class="font-lg">Contact Us</p>
-            Email : endless.themes@gmail.com
-            <div class="seperator"></div>
-            <a class="btn btn-info"><i class="fa fa-envelope"></i> Contact support</a>
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-      </div>
-    </footer>
-  </div><!-- /wrapper -->
+          <div class="col-xs-12 col-sm-7">
+            <div class="padder-20 hidden-xs"></div>
+            <h1 class="title">Discover Tax Knowledge.</h1>
+            <div class="sub-title">
+              anakpajak is social media to increase business trust and encourage tax information available to all people.           
+            </div>
+  
+  <div class="row signup-row hidden-sm">
+  <div class="padder-20"></div>
+  <div class="col-xs-12 sub-title text-primary-color">
+    Made with <icon class="fa-heart-o"></icon> in Indonesia
+  </div>
+  <div class="padder-20"></div>
+  <div class="padder-10 visible-xs"></div>
+  <div class="padder-10"></div>
+</div>
 
-  <a href="" id="scroll-to-top" class="hidden-print"><i class="fa fa-chevron-up"></i></a>
-  
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-  
-  <!-- Jquery -->
-  <%= javascript_include_tag "jquery-1.10.2.min" %>
-  <%= javascript_include_tag "bootstrap.min" %>
-  <%= javascript_include_tag 'waypoints.min' %> 
-  <%= javascript_include_tag 'jquery.localscroll.min' %> 
-  <%= javascript_include_tag 'jquery.scrollTo.min' %> 
-  <%= javascript_include_tag 'modernizr.min' %>
-  <%= javascript_include_tag 'pace.min' %>
-  <%= javascript_include_tag 'jquery.popupoverlay.min' %>
-  <%= javascript_include_tag 'jquery.slimscroll.min' %>
-  <%= javascript_include_tag 'jquery.cookie.min' %>
-  <%= javascript_include_tag "endless/endless" %>
-  <script>
-    $(function()  {
-      $('.animated-element').waypoint(function() {
-        
-        $(this).removeClass('no-animation');
-        
-      }, { offset: '70%' });
+        </div>
+        <div class="col-sm-5 hidden-xs">
+          <%= image_tag("home.png", class: "img-responsive pull-right")%>
+        </div>
+      </div>
+
+    </div>
+  </div>
+<div class="section section-signup">
+  <div class="container">
+    <div class="row">
       
-      $('.nav').localScroll({duration:800});
-    });
-  </script>
+      <div class="col-sm-4">
+        <div class="notice">
+          
+            SIGN UP FOR FREE
+          
+        </div>
+        <div class="padder-10"></div>
+        <div class="small">
+          
+            We only need a few permissions and hate social spam too.
+          
+          <a href="#" class="text-underline">
+            Prefer email?
+          </a>
+        </div>
+      </div>
+      <div class="padder-30 visible-xs"></div>
+      
+      <div class="col-xs-12 col-sm-8">
+        <div class="row">
+          <a href="<%= user_omniauth_authorize_path(:facebook) %>">
+          <div class="col-md-6">
+            <button class="btn btn-fb btn-icon btn-block"
+              data-type="signup_button" data-channel-type="facebook">
+              <div class="sprite-facebook_btn icon"></div>
+              <span class="text">
+                SIGN IN WITH FACEBOOK
+              </span>
+            </button>
+          </div>
+          </a>
+          <div class="padder-10 visible-xs visible-sm"></div>
+          <a href="<%= user_omniauth_authorize_path(:twitter) %>">
+          <div class="col-md-6">
+            <button class="btn btn-twt btn-icon btn-block"
+              data-type="signup_button" data-channel-type="twitter">
+              <div class="sprite-twitter_btn icon"></div>
+              <span class="text">
+                SIGN IN WITH TWITTER
+              </span>
+            </button>
+          </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+    <div id="footer">
+<div class="thick_footer">
+  <div class="container">
+       <span>anakpajak</span>  &#169; 2014 <a href="https://evonestudio.com" target="_blank">Evone Studio</a>. ALL Rights Reserved ~ Terms & Policy ~ FAQ ~ About Us ~ Contact Us
+    </div>
+</div>
+    </div>
+  <%= javascript_include_tag "jquery-1.10.2.min" %>       
   </body>
