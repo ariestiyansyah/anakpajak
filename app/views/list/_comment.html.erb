@@ -1,0 +1,14 @@
+<li class="media">
+  <a class="pull-left" href="#">
+    <%= image_tag("img/user.jpg", class: "media-object img-circle", alt: "User Avatar", style: "width: 40px; height: 40px;") %>
+  </a>
+  <div class="media-body">
+    <div class="media-heading">
+      <a href="#"><%= comment.user.username %></a>
+      <small class="text-muted">
+        Oct 13, 2013 at 7:51 am / <!-- <a href="#">Reply</a> -->
+      </small>
+    </div>
+    <%= raw comment.comment %>
+  </div>
+</li>

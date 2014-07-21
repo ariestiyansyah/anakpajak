@@ -1,54 +1,41 @@
-<div class="wrapper row-offcanvas row-offcanvas-left">
-            <!-- Left side column. contains the logo and sidebar -->
-            <%= render "form/sidebar"%>
-            <!-- Right side column. Contains the navbar and content of the page -->
-            <aside class="right-side">
-                <!-- Content Header (Page header) -->
-                <section class="content-header">
-                    <h1>
-                        Article
-                    </h1>
-                </section>
-                <!-- Main content -->
-                <section class="content">
-                    <!-- Primary box -->
+<% content_for :style do %>
+  <%= stylesheet_link_tag "bootstrap.min" %>
+  <%= stylesheet_link_tag "font-awesome.min" %>
+  <%= stylesheet_link_tag "pace" %>
+  <%= stylesheet_link_tag "colorbox/colorbox" %>
+  <%= stylesheet_link_tag "endless.min" %>
+  <%= stylesheet_link_tag "endless-skin" %>
+<% end %>
+<body class="overflow-hidden">
+  <!-- Overlay Div -->
+  <div id="overlay" class="transparent"></div>
+  <div id="wrapper" class="preload">
+    <%= render 'layouts/user_top_navigation' %>
 
-                            <div class="box box-solid box-primary">
-                                <div class="box-header">
-                                    <h3 class="box-title"><%= @article.title %></h3>
-                                    <div class="box-tools pull-right">
-                                        <button class="btn btn-primary btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                                        <button class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-ok"></i></button>
-                                    </div>
-                                </div>
-                                <div class="box-body">
-                                    Oleh: <code><%= @article.user.username %></code>
-                                    <p><%= raw(@article.content) %></p>
-                                <div class="box-footer">
-                                        <%#= render "form/answer" %>
-                                      
-                                </div>
-                               <div class="box-footer">     
-                               <div class="box-body chat" id="chat-box">
-                                    <%# @answers.each do |answer|%>
-                                        <%# @answer = answer %>
-                                        <%#= render "list/answer" %>
-                                    <%# end %>
-                                </div><!-- /.chat -->
-                                
-                            </div><!-- /.box (chat box) -->
-                                </div><!-- /.box-body -->
-                            </div><!-- /.box -->
-                        </div>
-            </aside><!-- /.right-side -->
-        </div><!-- ./wrapper -->
-
-        <script type="text/javascript">
-            $(function() {
-                // Replace the <textarea id="editor1"> with a CKEditor
-                // instance, using default configuration.
-                CKEDITOR.replace('editor1');
-                //bootstrap WYSIHTML5 - text editor
-                $(".textarea").wysihtml5();
-            });
-        </script>
+    <div id="main-container">
+        <%= render 'main_form/show_article' %>        
+    </div><!-- /main-container -->
+  </div><!-- /wrapper -->
+  <!-- Footer
+    ================================================== -->
+  <%= render 'layouts/footer' %> 
+  <%= javascript_include_tag "jquery-1.10.2.min" %>
+  <%= javascript_include_tag "bootstrap.min" %>
+  <%= javascript_include_tag 'jquery.colorbox.min' %>  
+  <%= javascript_include_tag 'modernizr.min' %>
+  <%= javascript_include_tag 'pace.min' %>
+  <%= javascript_include_tag 'jquery.popupoverlay.min' %>
+  <%= javascript_include_tag 'jquery.slimscroll.min' %>
+  <%= javascript_include_tag 'jquery.cookie.min' %>
+  <%= javascript_include_tag "endless/endless" %>
+  <script>
+    $(function()  {
+      //Colorbox 
+      $('.image-zoom').colorbox({
+        maxWidth:'90%',
+        width:'800px'
+      });
+    });
+  </script>
+  
+  </body>

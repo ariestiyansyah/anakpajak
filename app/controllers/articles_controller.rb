@@ -27,11 +27,8 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @article = Article.find_by_id params[:id]
-    respond_to do |format|
-      format.html #render show.html.erb
-      # format.json { render json: @article }
-      # format.js { render json: @article, callback: params[:callback] }
-    end
+    @article  = Article.find_by_id params[:id]
+    @comment  = Comment.new
+    @comments = @article.comments
   end
 end

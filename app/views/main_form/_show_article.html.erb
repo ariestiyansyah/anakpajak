@@ -1,0 +1,183 @@
+<div class="padding-md">
+        <div class="row">
+          <div class="col-md-11"> 
+            <h3 class="headline m-top-md">
+              Welcome To Our Blog
+              <span class="line"></span>
+            </h3>
+            <div class="row"> 
+              <div class="col-md-8">
+                <div class="panel blog-container">
+                  <div class="panel-body">
+                    <h4><%= @article.title %></h4>
+                    <small class="text-muted">By <a href="#"><strong> <%= @article.user.username %></strong></a> |  Post on Aug 15, 2013  | 3 comments</small>
+                    <div class="seperator"></div>
+                    <div class="seperator"></div>
+                    
+                    <div class="image-wrapper">
+                      <a class="image-wrapper image-zoom" href="img/movie/preview1.jpg">
+                        <img src="img/movie/preview1.jpg" alt="Photo of Blog">
+                        <div class="image-overlay"></div> 
+                      </a>
+                    </div><!-- /image-wrapper -->
+                                    
+                    <%= raw @article.content %>
+                    <div class="m-top-sm">
+                      <a href="#" class="btn btn-sm btn-success">Previous</a>
+                      <a href="#" class="btn btn-sm btn-success pull-right">Next Post</a>
+                    </div>
+                  </div>
+                </div><!-- /panel -->
+                <div class="panel">
+                  <div class="panel-body">
+                    <div class="share-blog clearfix">
+                      <span class="pull-left" style="line-height: 25px;">Share this story</span>
+                      <div class="pull-right">
+                        <a href="#" class="social-connect tooltip-test facebook-hover" data-toggle="tooltip" data-original-title="Facebook"><i class="fa fa-facebook"></i></a>
+                        <a href="#" class="social-connect tooltip-test twitter-hover" data-toggle="tooltip" data-original-title="Twitter"><i class="fa fa-twitter"></i></a>
+                        <a href="#" class="social-connect tooltip-test google-plus-hover" data-toggle="tooltip" data-original-title="Google Plus"><i class="fa fa-google-plus"></i></a>
+                        <a href="#" class="social-connect tooltip-test rss-hover" data-toggle="tooltip" data-original-title="Rss feed"><i class="fa fa-rss"></i></a>
+                        <a href="#" class="social-connect tooltip-test tumblr-hover" data-toggle="tooltip" data-original-title="Tumblr"><i class="fa fa-tumblr"></i></a>
+                        <a href="#" class="social-connect tooltip-test dribbble-hover" data-toggle="tooltip" data-original-title="Dribbble"><i class="fa fa-dribbble"></i></a>
+                        <a href="#" class="social-connect tooltip-test linkedin-hover" data-toggle="tooltip" data-original-title="Linkedin"><i class="fa fa-linkedin"></i></a>
+                        <a href="#" class="social-connect tooltip-test pinterest-hover" data-toggle="tooltip" data-original-title="Pinterest"><i class="fa fa-pinterest"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div><!-- /panel -->
+                <h4 class="headline" id="comments-size">
+                  Comments (<%= @comments.size %>)
+                  <span class="line"></span>
+                </h4>
+                <ul class="media-list comment-list">
+                  <% @comments.each do |comment| %>
+                    <%= render partial: "list/comment", locals: {comment: comment} %>
+                  <% end %> 
+                </ul><!-- /media-list -->         
+                <h4 class="headline">
+                  Add Comment
+                  <span class="line"></span>
+                </h4>
+                <%= render 'form/comment' %>
+              </div><!-- /.col -->
+              <div class="col-md-4">
+                <form>
+                  <div class="form-group">
+                    <div class="input-group">
+                      <input type="text" class="form-control input-sm" placeholder="Search In Blog...">
+                      <span class="input-group-btn">
+                        <button class="btn btn-default btn-sm" type="button"><i class="fa fa-search"></i></button>
+                      </span>
+                    </div><!-- /input-group -->
+                  </div><!-- /form-group -->
+                </form>
+                <h4 class="headline">
+                  POPULAR POST
+                  <span class="line"></span>
+                </h4>
+                <div class="media popular-post">
+                  <a class="pull-left" href="single_post.html">
+                    <img src="img/gallery1.jpg" alt="Popular Post">
+                  </a>
+                  <div class="media-body">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                  </div>
+                </div>
+                <div class="media popular-post">
+                  <a class="pull-left" href="single_post.html">
+                    <img src="img/gallery2.jpg" alt="Popular Post">
+                  </a>
+                  <div class="media-body">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </div>
+                </div>
+                <div class="media popular-post">
+                  <a class="pull-left" href="single_post.html">
+                    <img src="img/gallery3.jpg" alt="Popular Post">
+                  </a>
+                  <div class="media-body">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </div>
+                </div>
+                <h4 class="headline">
+                  CATEGORY
+                  <span class="line"></span>
+                </h4>
+                <ul class="category">
+                  <li><a href="#"><i class="fa fa-chevron-right"></i> Music</a></li>
+                  <li><a href="#"><i class="fa fa-chevron-right"></i> Videos</a></li>
+                  <li><a href="#"><i class="fa fa-chevron-right"></i> Photography</a></li>
+                  <li><a href="#"><i class="fa fa-chevron-right"></i> Food</a></li>
+                  <li><a href="#"><i class="fa fa-chevron-right"></i> Uncategorized</a></li>
+                </ul>
+                <h4 class="headline">
+                  TAG CLOUD
+                  <span class="line"></span>
+                </h4>
+                <div class="tag-wrapper">
+                  <a class="blog-tag" href="#">Business</a> 
+                  <a class="blog-tag" href="#">Blog</a> 
+                  <a class="blog-tag" href="#">Vacation</a>
+                  <a class="blog-tag" href="#">Nature</a>
+                  <a class="blog-tag" href="#">Animals</a>
+                  <a class="blog-tag" href="#">Sport</a>
+                  <a class="blog-tag" href="#">Food</a>
+                </div>
+                <h4 class="headline">
+                  ABOUT THE BLOG
+                  <span class="line"></span>
+                </h4>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eros nibh, viverra a dui a, gravida varius velit. Nunc vel tempor nisi. Aenean id pellentesque mi, non placerat mi. Integer luctus accumsan tellus. Vivamus quis elit sit amet nibh lacinia suscipit eu quis purus. Vivamus tristique est non ipsum dapibus lacinia sed nec metus.
+                </p>
+                <h4 class="headline">
+                  PHOTO STREAM
+                  <span class="line"></span>
+                </h4>
+                <ul class="photo-stream">
+                  <li>
+                    <a href="#">
+                      <img src="img/gallery1.jpg" alt="Photo Stream">
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img src="img/gallery2.jpg" alt="Photo Stream">
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img src="img/gallery3.jpg" alt="Photo Stream">
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img src="img/gallery4.jpg" alt="Photo Stream">
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img src="img/gallery5.jpg" alt="Photo Stream">
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img src="img/gallery6.jpg" alt="Photo Stream">
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img src="img/gallery7.jpg" alt="Photo Stream">
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img src="img/gallery8.jpg" alt="Photo Stream">
+                    </a>
+                  </li>
+                </ul>
+              </div><!-- /.col -->
+            </div><!-- /.row -->
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.padding-md -->

@@ -19,8 +19,11 @@ Myapp::Application.routes.draw do
   resource :user, only:[] do 
     
   end
+  
   resources :articles, only:[:index, :create, :update, :delete, :new, :show] do
+    resources :comments, only: [:index, :create, :update, :delete, :new]
   end
+
   resources :rules, only:[:index, :create, :update, :delete, :new, :show] do
   end
   match '/profile/:id/finish_signup'      => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup

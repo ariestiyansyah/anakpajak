@@ -1,0 +1,3 @@
+$( "div#main-container" ).hide( "slow", function () {
+  $( "div#main-container" ).html("<%= escape_javascript(render 'main_form/show_article') %>").fadeIn().delay(2000);
+});

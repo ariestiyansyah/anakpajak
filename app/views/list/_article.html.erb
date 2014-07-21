@@ -10,7 +10,9 @@
         <p class="m-top-sm m-bottom-sm">
             <%= raw(article.content[0..100])+"....." %>
         </p>
-        <a href="<%= article_path(article) %>"><i class="fa fa-angle-double-right"></i> Continue reading</a>
+        <%= link_to( article_path(article), remote: true) do %>
+            <i class="fa fa-angle-double-right"></i> Continue reading
+        <% end %>
         <span class="post-like text-muted tooltip-test" data-toggle="tooltip" data-original-title="I like this post!">
             <i class="fa fa-heart"></i> <span class="like-count">8</span>
         </span>
