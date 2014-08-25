@@ -1,8 +1,13 @@
 Myapp::Application.routes.draw do
+  root to: 'home#index'
+  
   devise_for :users, :controllers => { :registrations => "registrations", :omniauth_callbacks => "users/omniauth_callbacks" }
   #get "home/index"
+  resource :user, only: []  do
+    post  'be_subscriber'         => 'users#be_subscriber', on: :collection, as:"be_subscriber"
+  end
   
-  root to: 'home#index'
+  
   get   'kurs'        => 'home#kurs', as:"kurs"
 
   resources :questions, only: [:index, :create, :update, :delete, :new, :show]  do
@@ -16,9 +21,8 @@ Myapp::Application.routes.draw do
 
   resources :consultants
 
-  resource :user, only:[] do 
-    
-  end
+  # resource :user, only:[] do 
+  # end
   
   resources :articles, only:[:index, :create, :update, :delete, :new, :show] do
     resources :comments, only: [:index, :create, :update, :delete, :new]

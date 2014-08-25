@@ -30,7 +30,10 @@ class ApplicationController < ActionController::Base
     def authenticate_user!(opts={})
       unless user_signed_in?
         @user = User.new
-        render "home/login"
+        # render "home/login"
+        # render "home/index"
+        render "home/landing"
+        # render "message/confirmation"
       end
     end
 

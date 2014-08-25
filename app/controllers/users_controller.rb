@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: [:profile, :timeline]
   before_filter :ensure_signup_complete , only: [:profile, :timeline]
   
   def timeline
@@ -36,6 +36,28 @@ class UsersController < ApplicationController
       @auth.user = @new_user
       @auth.save
       redirect_to root_path, notice: 'Your profile has been donfirmed, please sign in again using your social account'
+    end
+  end
+
+  def be_subscriber
+    respond_to do |format|
+      begin
+        gb = Gibbon::API.lists.subscribe({:id => MAILCHIMP_LIST_SUBSCRIBE, :email => {:email => params[:email]}, :double_optin => false})
+        if gb["error"].nil?
+          @subscribed_email = gb["email"]
+          format.html { render "message/confirmation" }
+        else
+          if gb["code"] == 214
+            @error_message = "Email yang dimasukkan telah terdaftar"
+          else
+            @error_message = "Email tidak boleh kosong"
+          end
+          format.js { render partial: "javascript/alert_error" }
+        end
+      rescue Gibbon::MailChimpError => e
+        @error_message = e.message
+        format.js { render partial: "javascript/alert_error" }
+      end
     end
   end
   
