@@ -51,12 +51,32 @@
             <div class="panel-footer clearfix">
               
               <div class="pull-right">
-                <span class="middle">Page 1 of 8 </span>
+                <span class="middle">Page <%= params[:page] || 1 %> of <%= @questions.total_pages %> </span>
                 <ul class="pagination middle">
-                  <li class="disabled"><a href="#"><i class="fa fa-step-backward"></i></a></li>
-                  <li class="disabled"><a href="#"><i class="fa fa-caret-left large"></i></a></li>
-                  <li><a href="#"><i class="fa fa-caret-right large"></i></a></li>
-                  <li><a href="#"><i class="fa fa-step-forward"></i></a></li>
+                  <li class="<%= 'disabled' if @questions.first_page? %>">
+                    <%= link_to(questions_path(:page => 1 ), remote: true) do %>
+                      <i class="fa fa-step-backward"></i>
+                    <% end %>
+                  </li>
+                  <li class="<%= 'disabled' if @questions.first_page? %>">
+                    <% if @questions.first_page? %>
+                      <a href="#"><i class="fa fa-caret-left large"></i></a>
+                    <% else %>
+                    <%= link_to_previous_page @questions, '<i class="fa fa-caret-left large"></i>'.html_safe, remote: true %>
+                    <% end %>
+                  </li>
+                  <li class="<%= 'disabled' if @questions.last_page? %>">
+                    <% if @questions.last_page? %>
+                      <a href="#"><i class="fa fa-caret-right large"></i></a>
+                    <% else %>
+                      <%= link_to_next_page @questions, '<i class="fa fa-caret-right large"></i>'.html_safe, remote: true %>
+                    <% end %>
+                  </li>
+                  <li class="<%= 'disabled' if @questions.last_page? %>">
+                    <%= link_to(questions_path(:page => (@questions.total_count / @questions.limit_value.to_f).ceil ), remote: true) do %>
+                      <i class="fa fa-step-forward"></i>
+                    <% end %>
+                  </li>
                 </ul>
               </div>
             </div>

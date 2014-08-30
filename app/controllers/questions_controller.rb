@@ -8,7 +8,7 @@ class QuestionsController < ApplicationController
   end
 
   def index
-    @questions = Question.all
+    @questions = Question.all.page params[:page]
     @articles = Article.all
   end
 
@@ -37,5 +37,9 @@ class QuestionsController < ApplicationController
   def vote_up
     @question = Question.find_by_id params[:id]
     @question.vote_up current_user
+  end
+
+  def favourite
+    
   end
 end

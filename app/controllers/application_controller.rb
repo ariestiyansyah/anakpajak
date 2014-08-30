@@ -32,7 +32,11 @@ class ApplicationController < ActionController::Base
         @user = User.new
         # render "home/login"
         # render "home/index"
-        render "home/landing"
+        if Rails.env.development?
+          render "home/login"
+        else
+          render "home/landing" 
+        end
         # render "message/confirmation"
       end
     end

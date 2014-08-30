@@ -4,7 +4,7 @@ class HomeController < ApplicationController
   
   # before_filter :authenticate_user!
   def index
-    @questions = Question.all
+    @questions = Question.all.page params[:page]
     render "questions/index"
     # @questions = Question.all.page(params[:page])
     # # debugger
