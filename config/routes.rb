@@ -30,6 +30,12 @@ Myapp::Application.routes.draw do
 
   resources :rules, only:[:index, :create, :update, :delete, :new, :show] do
   end
+
+  resource :question, only: [] do
+    post  ':question_id/favourited'    => 'questions#favourited',   on: :collection,  as: "favourited"
+    post  ':question_id/unfavourited'  => 'questions#unfavourited', on: :collection,  as: "unfavourited"
+  end
+
   match '/profile/:id/finish_signup'      => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
   get  '/profile/:id/finish_confirmation' => 'users#finish_confirmation', as:"finish_confirmation"
   get  'timeline'   => 'home#timeline', as:"timeline"

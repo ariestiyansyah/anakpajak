@@ -7,7 +7,6 @@ class HomeController < ApplicationController
     @questions = Question.all.page params[:page]
     render "questions/index"
     # @questions = Question.all.page(params[:page])
-    # # debugger
   end
   def timeline
     @activities = PublicActivity::Activity.all  

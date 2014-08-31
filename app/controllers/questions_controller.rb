@@ -39,7 +39,13 @@ class QuestionsController < ApplicationController
     @question.vote_up current_user
   end
 
-  def favourite
-    
+  def favourited
+    @question     = Question.find_by_id params[:question_id]
+    @question.liked_by current_user
+  end
+
+  def unfavourited
+    @question     = Question.find_by_id params[:question_id]
+    @question.disliked_by current_user
   end
 end

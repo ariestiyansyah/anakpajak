@@ -36,16 +36,10 @@
               </div>
             </div>
             <ul class="list-group">
-              <li class="list-group-item clearfix inbox-item">
-                <span class="starred"><i class="fa fa-star fa-lg"></i></span>
-                <span class="detail">Phasellus ac feugiat mauris. Interdum et malesuada fames ac ante ipsum primis in faucibus.</span> <span class="from">ariestiyansyah</span> 
-                <span class="inline-block pull-right">
-                  <small class="label label-info"><i class="fa fa-file-text"></i> PPN</small>             
-                  <span class="time"> 2:32 Am</span>    
-                </span>
-              </li>
               <% @questions.each do |question| %>
-                <%= render partial: "list/question", locals: {question: question} %>
+                <li class="list-group-item clearfix inbox-item" id="<%= question.id %>">
+                  <%= render partial: "list/question", locals: {question: question} %>             
+                </li>
               <% end %>
             </ul><!-- /list-group -->
             <div class="panel-footer clearfix">

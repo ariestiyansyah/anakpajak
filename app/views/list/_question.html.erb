@@ -1,13 +1,12 @@
-<li class="list-group-item clearfix inbox-item">
-  <span class="no_starred"><i class="fa fa-star fa-lg"></i></span> 
-  <%= link_to( question_path(question), remote: true) do %>
-    <span class="detail"><%= question.title %></span>
-  <% end %>
-  <span class="from"><%= question.user.username %></span> 
-  <span class="inline-block pull-right">
-  <small class="label label-warning"><i class="fa fa-file-text"></i> Peraturan Pajak</small>
-  <small class="label label-success"><i class="fa fa-file-text"></i> PPh</small>                
-  <span class="time"> 1:17 Am</span>    
-  </span>
-</li>
-              
+<%= link_to( current_user.liked?(question) ? unfavourited_question_path(question) : favourited_question_path(question), remote: true,  method: :post) do %>
+  <span class=<%= current_user.liked?(question) ? "starred" : "no_starred" %>><i class="fa fa-star fa-lg"></i></span> 
+<% end %>
+<%= link_to( question_path(question), remote: true) do %>
+  <span class="detail"><%= question.title %></span>
+<% end %>
+<span class="from"><%= question.user.username %></span> 
+<span class="inline-block pull-right">
+<small class="label label-warning"><i class="fa fa-file-text"></i> Peraturan Pajak</small>
+<small class="label label-success"><i class="fa fa-file-text"></i> PPh</small>                
+<span class="time"> 1:17 Am</span>    
+</span>

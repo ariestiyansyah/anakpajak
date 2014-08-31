@@ -3,7 +3,7 @@ class Question < ActiveRecord::Base
   belongs_to  :user
   has_many    :question_tags
   has_many    :tags, through: :question_tags
-  paginates_per 1
+  paginates_per 10
   acts_as_votable
 
   def vote_up user
