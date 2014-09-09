@@ -9,7 +9,8 @@ class HomeController < ApplicationController
     # @questions = Question.all.page(params[:page])
   end
   def timeline
-    @activities = PublicActivity::Activity.all  
+    @activities = PublicActivity::Activity.all.where(owner: current_user)
+    # debugger
     @template   = "timeline"
   end
   def login

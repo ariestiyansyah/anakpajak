@@ -11,7 +11,7 @@ class ArticlesController < ApplicationController
     respond_to do |format|
       if @article.save
         WebsocketRails[:articles].trigger 'new', @article
-        @article.create_activity key: 'article.create', owner: current_user
+        @article.create_activity key: 'article.create', owner: current_user, recipient: @article
         format.html { redirect_to root_path }
       else
       end
