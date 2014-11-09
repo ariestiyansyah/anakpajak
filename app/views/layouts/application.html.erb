@@ -16,5 +16,18 @@
   <%#= render 'layouts/navigation' %>
   <%= yield %>
   <%#= render 'layouts/footer' %>
+  <script type="text/javascript">
+    $("a.navigation").on("click",function () {
+      var url = $(this).attr("data-url");
+      $.ajax({                                      
+        url   : url,
+        type  : "GET"
+      });
+    });
+    if (location.hash !=""){
+      href = location.hash;
+      $("a.navigation[href='"+href+"']").trigger("click");
+    }
+  </script>
 </body>
 </html>

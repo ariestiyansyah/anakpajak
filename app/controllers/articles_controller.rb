@@ -19,11 +19,14 @@ class ArticlesController < ApplicationController
   end
 
   def set_params
-    params.require(:article).permit(:title, :content)           
+    params.require(:article).permit(:title, :content, :bootsy_image_gallery_id)           
   end
 
   def index
     @articles = Article.all
+    respond_to do |format|
+      format.js
+    end
   end
 
   def show

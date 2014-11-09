@@ -196,7 +196,7 @@
         <div class="main-menu">
           <ul>
             <li>
-              <%= link_to(timeline_path, remote: true) do %>
+              <%= link_to("#timeline",class: "navigation", data:{url:timeline_path}) do %>
                 <span class="menu-icon">
                   <i class="fa fa-dashboard fa-lg"></i> 
                 </span>
@@ -207,7 +207,7 @@
               <% end %>
             </li>
             <li>
-              <%= link_to(articles_path, remote: true) do %>
+              <%= link_to("#articles",class: "navigation", data:{url:articles_path}) do %>
                 <span class="menu-icon">
                   <i class="fa fa-file-text fa-lg"></i> 
                 </span>
@@ -242,7 +242,7 @@
                 <li><a href="#"><span class="submenu-label fa fa-angle-double-right"> Kurs Pajak</span></a></li>
                 <li><a href="#"><span class="submenu-label fa fa-angle-double-right"> KPP</span></a></li>
                 <li>
-                  <%= link_to(consultants_path, remote: true) do %>
+                  <%= link_to("#consultants",class: "navigation", data:{url:consultants_path}) do %>
                     <span class="submenu-label fa fa-angle-double-right"> Konsultan</span>
                   <% end %>
                 </li>
@@ -251,7 +251,7 @@
               </ul>
             </li>
             <li>
-              <%= link_to(questions_path, remote: true) do %>
+              <%= link_to("#questions",class: "navigation", data:{url:questions_path}) do %>
                 <span class="menu-icon">
                   <i class="fa fa-flask fa-lg"></i> 
                 </span>

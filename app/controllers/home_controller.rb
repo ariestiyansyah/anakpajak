@@ -12,6 +12,9 @@ class HomeController < ApplicationController
     @activities = PublicActivity::Activity.all.where(owner: current_user)
     # debugger
     @template   = "timeline"
+    respond_to do |format|
+      format.js
+    end
   end
   def login
     @user = User.new

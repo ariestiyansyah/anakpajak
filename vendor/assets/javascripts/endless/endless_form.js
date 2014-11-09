@@ -29,7 +29,7 @@ $(function()	{
 	$(".product-key").mask("a*-999-a999");
 
 	// Wysihtml5
-	$('#wysihtml5-textarea').wysihtml5();
+	// $('#wysihtml5-textarea').wysihtml5();
 
 	// Toggle border of control group
 	$('#toggleLine').click(function()	{			
@@ -70,4 +70,5 @@ $(function()	{
 
 		return false;
 	});
+	Bootsy.init();
 });

@@ -12,13 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootsy
 //= require jquery.turbolinks
 //= require_tree .
 //=# require turbolinks
 
 //= require websocket_rails/main
-//= require bootstrap-wysihtml5
-//= require bootstrap-wysihtml5/locales
 
 var dispatcher = new WebSocketRails('localhost:3000/websocket');
 channel = dispatcher.subscribe('orders');

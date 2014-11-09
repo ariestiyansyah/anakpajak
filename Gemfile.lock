@@ -33,8 +33,10 @@ GEM
     awesome_nested_fields (0.6.4)
       rails (>= 3.0.0)
     bcrypt (3.1.7)
-    bootstrap-wysihtml5-rails (0.3.2.100)
-      railties (>= 3.0)
+    bootsy (2.0.9)
+      carrierwave (~> 0.10.0)
+      mini_magick (~> 3.7.0)
+      remotipart (~> 1.2.1)
     builder (3.1.4)
     carrierwave (0.10.0)
       activemodel (>= 3.2.0)
@@ -163,6 +165,7 @@ GEM
     rdoc (3.12.2)
       json (~> 1.4)
     redis (3.0.6)
+    remotipart (1.2.1)
     rmagick (2.13.2)
     sass (3.2.12)
     sass-rails (4.0.1)
@@ -220,7 +223,7 @@ DEPENDENCIES
   acts_as_follower
   acts_as_votable
   awesome_nested_fields
-  bootstrap-wysihtml5-rails
+  bootsy
   carrierwave
   coffee-rails (~> 4.0.0)
   debugger

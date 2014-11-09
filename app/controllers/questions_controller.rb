@@ -10,6 +10,9 @@ class QuestionsController < ApplicationController
   def index
     @questions = Question.all.page params[:page]
     @articles = Article.all
+    respond_to do |format|
+      format.js
+    end
   end
 
   def create
