@@ -19,5 +19,7 @@ class Question < ActiveRecord::Base
   end
 
   include PublicActivity::Model
+  include Bootsy::Container
+  
   tracked
 end
