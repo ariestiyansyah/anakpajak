@@ -9,4 +9,5 @@
   Role.find_or_create_by_name role
 end
 
-user = User.create email: "aji@aji.com", password:"123456789", confirmed_at: Time.now, username:"microdevil"
+# user = User.create email: "aji@aji.com", password:"123456789", confirmed_at: Time.now, username:"microdevil"
+user = User.create email: "aji.achmad@icloud.com", password:"evonestudio.com", confirmed_at: Time.now, username:"ajidmicro", role:Role.last

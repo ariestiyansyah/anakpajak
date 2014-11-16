@@ -269,13 +269,29 @@
                 <span class="text">
                   Info Pajak
                 </span>
-                <span class="badge badge-danger bounceIn animation-delay6">4</span>
+                <!-- <span class="badge badge-danger bounceIn animation-delay6">4</span> -->
                 <span class="menu-hover"></span>
               </a>
             </li>
-            
+            <li>
+              <%= link_to("#payments",class: "navigation", data:{url:payments_path}) do %>
+                <span class="text">
+                  Bayar Pajak
+                </span>
+                <span class="menu-hover"></span>
+              <% end %>
+            </li>
+            <% if current_user.is_admin? %>
+              <li>
+                <%= link_to("#imports",class: "navigation", data:{url:new_import_consultants_path}) do %>
+                  <span class="text">
+                    Import
+                  </span>
+                  <span class="menu-hover"></span>
+                <% end %>
+              </li>
+            <% end %>
           </ul>
-          
           <div class="alert alert-info">
             First time using anakpajak.com. 
           </div>

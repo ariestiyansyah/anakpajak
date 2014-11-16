@@ -77,7 +77,7 @@ Myapp::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
-  config.action_mailer.default_url_options = { host: 'anakpajak.com' }
+  config.action_mailer.default_url_options = { host: 'demo.anakpajak.com' }
   # config.action_mailer.perform_deliveries = true
   # config.action_mailer.raise_delivery_errors = true
   # config.action_mailer.default_options = {from: 'noreply@anakpajak.com'}

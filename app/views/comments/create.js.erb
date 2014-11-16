@@ -1,2 +1,3 @@
+$( "#comment_comment" ).val( "" );
 $( "h4#comments-size" ).html( "Comments (<%= @comments.size %>)<span class='line'></span>" );
-$( "ul.comment-list" ).prepend( "<%= escape_javascript(render partial: 'list/comment', locals: {comment: @comment}) %>" );
+$( "ul.comment-list" ).append( "<%= escape_javascript(render partial: 'list/comment', locals: {comment: @comment}) %>" );

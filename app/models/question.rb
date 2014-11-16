@@ -5,6 +5,7 @@ class Question < ActiveRecord::Base
   has_many    :tags, through: :question_tags
   paginates_per 10
   acts_as_votable
+  acts_as_taggable
 
   def vote_up user
     vote_by voter: user, vote: 'like'

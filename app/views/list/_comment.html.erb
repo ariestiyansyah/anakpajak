@@ -6,7 +6,7 @@
     <div class="media-heading">
       <a href="#"><%= comment.user.username %></a>
       <small class="text-muted">
-        Oct 13, 2013 at 7:51 am / <!-- <a href="#">Reply</a> -->
+        <%= comment.created_at.localtime.strftime("%B %d, %Y at %I:%M%p")  %>
       </small>
     </div>
     <%= raw comment.comment %>

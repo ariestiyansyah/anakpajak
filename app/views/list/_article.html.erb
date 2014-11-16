@@ -6,7 +6,7 @@
         </a>
                                         
         <h4><%= article.title %></h4>
-        <small class="text-muted">By <a href="#"><strong> <%= article.title %></strong></a> |  Post on <%= article.created_at.to_s %>  | 3 comments</small>
+        <small class="text-muted">By <a href="#"><strong> <%= article.title %></strong></a> |  Post on <%= article.created_at.to_s %>  | <%= article.comments.size %> comments</small>
         <p class="m-top-sm m-bottom-sm">
             <%= raw(article.content[0..100])+"....." %>
         </p>

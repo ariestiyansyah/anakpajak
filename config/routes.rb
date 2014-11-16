@@ -3,7 +3,7 @@ Myapp::Application.routes.draw do
   root to: 'home#index'
   
   devise_for :users, :controllers => { :registrations => "registrations", :omniauth_callbacks => "users/omniauth_callbacks" }
-  #get "home/index"
+  
   resource :user, only: []  do
     post  'be_subscriber'         => 'users#be_subscriber', on: :collection, as:"be_subscriber"
   end
@@ -20,7 +20,15 @@ Myapp::Application.routes.draw do
     post  ':id/vote_down' => 'questions#vote_down', on: :collection, as:"vote_down"
   end
 
-  resources :consultants
+  resources :consultants do
+    get   'new_import'  => 'consultants#new_import', on: :collection, as:"new_import"
+    collection { post :import }
+  end
+  
+  resources :payments 
+
+  post "/hook"          => "payments#hook"
+  post "/payments/:id"  => "payments#show"
 
   # resource :user, only:[] do 
   # end

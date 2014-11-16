@@ -28,7 +28,7 @@ class QuestionsController < ApplicationController
   end
 
   def set_params
-    params.require(:question).permit(:title, :content)           
+    params.require(:question).permit(:title, :content, :tag_list)           
   end
 
   def show
