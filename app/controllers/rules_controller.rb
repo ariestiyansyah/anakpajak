@@ -22,13 +22,32 @@ class RulesController < ApplicationController
   end
 
   def index
+    # data = File.read("#{Rails.root}/public/undang/1.docx")
+    # doc       = Docx::Document.open("#{Rails.root}/public/undang/1.docx")
+    # @result    = doc.paragraphs.map do |p|
+    #   p.to_html
+    # end
+    yomu = Yomu.new "#{Rails.root}/public/undang/1.docx"
+    @result = yomu.html
+    # @aji = @result.join("")
     @rules = Rule.all
     respond_to do |format|
       format.js
+      format.html
     end
   end
 
   def show
+    @user = User.new
     @rule = Rule.find_by_id params[:id]
+  end
+  def import
+    Rule.import(params[:file])
+    redirect_to root_path
+  end
+  def new_import
+    respond_to do |format|
+      format.js
+    end
   end
 end

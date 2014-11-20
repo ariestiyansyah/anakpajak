@@ -1,0 +1,3 @@
+$( "div#main-container" ).hide( "slow", function () {
+  $( "div#main-container" ).html("<%= escape_javascript(render 'form/import_uu') %>").fadeIn().delay(2000);
+});

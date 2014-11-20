@@ -35,3 +35,6 @@ gem 'gibbon'
 gem 'bootsy'
 gem 'acts-as-taggable-on', '~> 3.4'
 gem 'roo'
+gem 'docx', '~> 0.2.07', :require => ["docx"]
+gem 'kramdown'
+gem 'yomu'

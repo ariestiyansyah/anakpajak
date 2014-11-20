@@ -9,9 +9,9 @@
             </div>
         </div>
         <div class="box-body">
-            Oleh: <code><%= rule.user.username %></code>
+            Oleh: <code><%#= rule.user.username %></code>
             <p>
-                <%= raw(rule.content[0..100])+"....." %>
+                <%#= raw(rule.content[0..100])+"....." %>
             </p>
         </div>
         <div class="box-footer">
@@ -19,3 +19,5 @@
         </div><!-- /.box-body -->
     </div><!-- /.box -->
 </div><!-- /.col -->
+<%#= simple_format h(@result.join("").html_safe) %>
+<%= raw @result %>

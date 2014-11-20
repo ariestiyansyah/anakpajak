@@ -1,0 +1,8 @@
+<%= form_tag import_rules_path, multipart: true, role: "form" do %>
+  <div class="form-group">
+    <div>
+      <%= file_field_tag :file %>
+    </div>
+  </div>
+  <%= submit_tag "Import", class: "btn btn-primary" %>
+<% end %>

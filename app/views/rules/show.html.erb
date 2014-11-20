@@ -22,8 +22,8 @@
                                     </div>
                                 </div>
                                 <div class="box-body">
-                                    Oleh: <code><%= @rule.user.username %></code>
-                                    <p><%= raw(@rule.content) %></p>
+                                    Oleh: <code><%#= @rule.user.username %></code>
+                                    <p><%= simple_format h(@rule.content.html_safe) %></p>
                                 <div class="box-footer">
                                         <%#= render "form/answer" %>
                                       

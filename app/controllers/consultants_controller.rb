@@ -3,7 +3,8 @@ class ConsultantsController < ApplicationController
   before_filter :ensure_signup_complete #, only: [:new, :create, :update, :destroy]
   
   def index
-    @consultants = Consultant.all
+    @jumlah       = Consultant.count 
+    @consultants  = Consultant.page(params[:page]).per 10
     respond_to do |format|
       format.js
     end

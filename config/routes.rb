@@ -38,6 +38,8 @@ Myapp::Application.routes.draw do
   end
 
   resources :rules, only:[:index, :create, :update, :delete, :new, :show] do
+    get   'new_import'  => 'rules#new_import', on: :collection, as:"new_import"
+    collection { post :import }
   end
 
   resource :question, only: [] do
