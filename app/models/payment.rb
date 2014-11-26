@@ -6,11 +6,11 @@ class Payment < ActiveRecord::Base
         business: "micro280991-facilitator@gmail.com",
         cmd: "_xclick",
         upload: 1,
-        return: "http://7ab1977a.ngrok.com#{return_path}",
+        return: "http://demo.anakpajak.com#{return_path}",
         invoice: id,
-        amount: 100,
+        amount: self.amount ,
         item_name: "Pajak",
-        notify_url: "http://7ab1977a.ngrok.com/hook"
+        notify_url: "http://demo.anakpajak.com/hook"
     }
     "https://www.sandbox.paypal.com/cgi-bin/webscr?" + values.to_query
   end

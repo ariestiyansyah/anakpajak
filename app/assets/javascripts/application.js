@@ -15,6 +15,7 @@
 //= require bootsy
 //= require jquery.turbolinks
 //= require_tree .
+//= require jquery-ui
 //=# require turbolinks
 
 //= require websocket_rails/main

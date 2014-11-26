@@ -3,7 +3,8 @@ class PaymentsController < ApplicationController
 
   def create
     @payment = Payment.new
-    @payment.amount = 10000#params [:payment][:amount]
+    @payment.amount = params[:total_payment]
+    @payment.npwp   = params[:npwp]
     @payment.status = false
     @payment.user   = current_user
     if @payment.save
