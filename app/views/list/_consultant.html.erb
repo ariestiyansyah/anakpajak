@@ -9,10 +9,14 @@
             <p class="m-top-sm">
                 <%= consultant.address %>
             </p>
-            <!-- <div class="text-right">
-                <a class="btn btn-sm btn-danger"><i class="fa fa-save fa-lg"></i> Save</a>
-                <a class="btn btn-sm btn-success"><i class="fa fa-star"></i> Favorite</a>
-            </div> -->
+            <div class="text-right">
+                <%= form_for @payment, id:"form-payment" do |f| %>
+                    <a class="btn btn-success hidden-print" id="invoicePrint"><i class="fa fa-print"></i> Print</a>
+                    <button class="btn btn-success hidden-print"><i class="fa fa-usd"></i> Proceed to Payment</button>
+                    <input type="hidden" id="total_payment" name="total_payment" value="100">
+                    <input type="hidden" id="npwp" name="npwp" value="123456789">
+                  <% end %>
+            </div>
         </div>
     </div><!-- /panel -->
             <% end %>
