@@ -1078,6 +1078,10 @@
           </table>
           <%= form_for @payment, id:"form-payment" do |f| %>
             <button class="btn btn-success hidden-print"><i class="fa fa-usd"></i> Bayar Konsultan</button>
+            <input type="hidden" id="total_payment_consultant" name="total_payment" value="100">
+            <input type="hidden" id="npwp_consultant" name="npwp" value="123456789">
+          <% end %>
+          <%= form_for @payment, id:"form-payment" do |f| %>
             <a class="btn btn-success hidden-print" id="invoicePrint"><i class="fa fa-print"></i> Print</a>
             <button class="btn btn-success hidden-print"><i class="fa fa-usd"></i> Lapor Pajak</button>
             <input type="hidden" id="total_payment" name="total_payment">
