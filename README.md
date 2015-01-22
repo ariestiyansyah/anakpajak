@@ -7,8 +7,10 @@
 
 ##Server##
 There are 2 server will be using for the development
-*1. Staging Server *
-*2. Production Server*
+*1. Staging Server * - branch using 'dev'
+*2. Production Server* - branch using 'master'
+
+Please make sure you are push to the right server, branch and server detail explained above is our paten, please follow the rules.
 
 ## Project Documentaion##
 
