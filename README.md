@@ -1,31 +1,19 @@
-# anakpajak.com Project Development #
-
 **Social Tax Application for Tax Enthusiast** 
 
-### Version ###
-Now running version alpha 1.0
+## Version ##
+	Alpha 1.0 - August 2014
+	Beta 1.0 - Active Version
+	Final 1.0 - On-Progress
 
-## Project Schedules and Roadmap
-* [Schedule for upcoming Release](https://bitbucket.org/evonestudio/anakpajak/wiki/Releases)
-* [General Checklist for Maintenance Releases](https://bitbucket.org/evonestudio/anakpajak/wiki/Releases/Checklist)
-* [anakpajak Roadmap Strategy](https://bitbucket.org/evonestudio/anakpajak/wiki/Roadmap)
+##Server##
+There are 2 server will be using for the development
+*1. Staging Server *
+*2. Production Server*
 
-## Project Coordination Meetings
+## Project Documentaion##
 Coming soon
 
-### Platform using ###
-
-* Rails
-* Ruby
-* Rake
-* Endless UI
-* Ubuntu Server
-* Sublime Text
-* Firefox Browser
-* MySQL Database
-* Bitbucket
-
-### Developer ###
+## Developer ##
 
 * Rizky Ariestiyansyah <onto@evonestudio.com>
 * Aji Achmad Mustofa <aji.achmad@evonestudio.com>
