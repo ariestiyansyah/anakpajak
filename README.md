@@ -11,7 +11,13 @@ There are 2 server will be using for the development
 *2. Production Server*
 
 ## Project Documentaion##
-Coming soon
+
+[Setup Environment](documentaion/environment/) 
+[Server Management](documentaion/server/) 
+[Layout and Rendering](documentaion/layout/) 
+
+For idea, backlog and issue please refer to our trello and create the issue on the github.cd Dc
+
 
 ## Developer ##
 
