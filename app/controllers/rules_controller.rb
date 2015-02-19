@@ -43,15 +43,17 @@ class RulesController < ApplicationController
     # yomu = Yomu.new "#{Rails.root}/public/undang/1.docx"
     # @result = yomu.html
     @result = File.read ("#{Rails.root}/public/undang/1.htm")
-    
   end
+
   def import
     Rule.import(params[:file])
     redirect_to root_path
   end
+  
   def new_import
     respond_to do |format|
       format.js
     end
   end
+
 end
