@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # anakpajak.com Project Development #
 
 **Social Tax Application for Tax Enthusiast** 
@@ -29,7 +28,6 @@ Coming soon
 ### Developer ###
 
 * Rizky Ariestiyansyah <onto@evonestudio.com>
-=======
 **Social Tax Application for Tax Enthusiast** 
 
 ## Version ##
@@ -56,5 +54,4 @@ For idea, backlog and issue please refer to our trello and create the issue on t
 ## Developer ##
 
 * Rizky Ariestiyansyah <onto@evonestudio.com>
->>>>>>> 92cad3aea6fed8dc247cb63b3724f6ed52870cca
 * Aji Achmad Mustofa <aji.achmad@evonestudio.com>
