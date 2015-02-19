@@ -1,0 +1,46 @@
+<div id="breadcrumb">
+  <ul class="breadcrumb">
+   <li><i class="fa fa-bar-chart-o"></i><a href="index.html"> Buat Pertanyaan</a></li>
+  </ul>
+</div><!-- breadcrumb -->
+<%= form_for @question do |f| %>
+<div class="padding-md">
+  <div class="row">
+    <div class="col-lg-10">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          Buat Pertanyaan
+        </div>
+        <div class="panel-heading">
+          <%= f.text_field :title, class: "form-control", placeholder: "Enter your title" %>
+        </div>
+        <div class="panel-body">
+          <div class="form-group">
+            <div class="col-md-12">
+              <%= f.bootsy_area :content, class: "form-control", rows: 12, placeholder: "Content" %>
+            </div><!-- /.col -->
+          </div><!-- /form-group -->
+          <div class="form-group">
+            <div class="col-md-12">
+              <label>Tags</label>
+              <%= f.text_field :tag_list, class: "tag-demo1", placeholder: "Tags" %>
+            </div><!-- /.col -->
+          </div><!-- /form-group -->
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-2">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div>
+            <%= button_tag type: 'submit', class: "btn btn-danger block" do %>
+              Publish <i class="fa fa-arrow-circle-right"></i>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><!-- /.row -->
+</div><!-- /.padding-sm -->
+<% end %>
+<%= javascript_include_tag "endless/endless_form" %>

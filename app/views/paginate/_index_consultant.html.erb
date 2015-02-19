@@ -1,0 +1,24 @@
+<strong style="margin-right:20px;"><%= @jumlah %> list(s)</strong>
+<!-- Sort by -->
+<!-- <select class="form-control input-sm" style="display:inline-block; width:100px;"> -->
+   <!--  <option value="">Date</option>
+    <option>Name</option>
+    <option>Popular</option> -->
+<!-- </select> -->
+<div class="search-pager">
+    <ul class="pagination pagination-sm pagination-split no-margin">
+        <%= paginate @consultants, remote: true %>
+    </ul>
+</div><!-- /search-pager -->
+<!-- <div class="search-pager">
+    <ul class="pagination pagination-sm pagination-split no-margin">
+        <li class="disabled"><a href="#">&laquo;</a></li>
+        <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#">&raquo;</a></li>
+     </ul>
+</div> -->
+<!-- /search-pager -->

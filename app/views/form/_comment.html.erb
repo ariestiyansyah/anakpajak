@@ -1,0 +1,7 @@
+<%= form_for @comment, url: article_comments_path(@article), remote: true  do |f| %>
+  <%= f.text_area :comment, class: "form-control", rows: "2" %>
+  <div class="seperator"></div>
+  <div class="text-right m-bottom-md">
+    <button class="btn btn-success">Post Comment</button>
+  </div>
+<% end %>

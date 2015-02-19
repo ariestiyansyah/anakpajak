@@ -1,0 +1,4 @@
+<%= link_to vote_down_question_path(@question), :method=> :post, remote: true, class: "button [secondary success alert] [radius round]", id: @question.id do %>
+    <span>Vote Down = </span> <%= @question.total_vote%>
+<% end %>
+              

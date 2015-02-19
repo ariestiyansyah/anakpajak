@@ -1,0 +1,1 @@
+$( "li#<%= @question.id %>" ).html("<%= escape_javascript(render partial: 'list/question', locals:{question: @question}) %>")

@@ -1,0 +1,319 @@
+<div id="top-nav" class="skin-6 fixed">
+      <div class="brand">
+        <a href="<% root_path %>"><span>anakpajak</span></a>
+      </div><!-- /brand -->
+      <button type="button" class="navbar-toggle pull-left" id="sidebarToggle">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <button type="button" class="navbar-toggle pull-left hide-menu" id="menuToggle">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <ul class="nav-notification clearfix">
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            <i class="fa fa-envelope fa-lg"></i>
+            <span class="notification-label bounceIn animation-delay4">7</span>
+          </a>
+          <ul class="dropdown-menu message dropdown-1">
+            <li><a>You have 4 new unread messages</a></li>            
+            <li>
+              <a class="clearfix" href="#">
+                <!-- <img src="img/user.jpg" alt="User Avatar"> -->
+                <%= image_tag("img/user.jpg") %>
+
+                <div class="detail">
+                  <strong><%= current_user.username %></strong>
+                  <p class="no-margin">
+                    Lorem ipsum dolor sit amet...
+                  </p>
+                  <small class="text-muted"><i class="fa fa-check text-success"></i> 27m ago</small>
+                </div>
+              </a>  
+            </li>
+            <li>
+              <a class="clearfix" href="#">
+                <!-- <img src="img/user2.jpg" alt="User Avatar"> -->
+                <%= image_tag("img/user.jpg") %>
+                <div class="detail">
+                  <strong><%= current_user.username %></strong>
+                  <p class="no-margin">
+                    Lorem ipsum dolor sit amet...
+                  </p>
+                  <small class="text-muted"><i class="fa fa-check text-success"></i> 5hr ago</small>
+                </div>
+              </a>  
+            </li>
+            <li>
+              <a class="clearfix" href="#">
+                <!-- <img src="img/user.jpg" alt="User Avatar"> -->
+                <%= image_tag("img/user.jpg") %>
+                <div class="detail">
+                  <strong>Bill Doe</strong>
+                  <p class="no-margin">
+                    Lorem ipsum dolor sit amet...
+                  </p>
+                  <small class="text-muted"><i class="fa fa-reply"></i> Yesterday</small>
+                </div>
+              </a>  
+            </li>
+            <li>
+              <a class="clearfix" href="#">
+                <!-- <img src="img/user2.jpg" alt="User Avatar"> -->
+                <%= image_tag("img/user.jpg") %>
+                <div class="detail">
+                  <strong>Baby Doe</strong>
+                  <p class="no-margin">
+                    Lorem ipsum dolor sit amet...
+                  </p>
+                  <small class="text-muted"><i class="fa fa-reply"></i> 9 Feb 2013</small>
+                </div>
+              </a>  
+            </li>
+            <li><a href="#">View all messages</a></li>            
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            <i class="fa fa-circle-o fa-lg"></i>
+            <span class="notification-label bounceIn animation-delay6">5</span>
+          </a>
+          <ul class="dropdown-menu notification dropdown-3">
+            <li><a href="#">You have 5 new notifications</a></li>           
+            <li>
+              <a href="#">
+                <span class="notification-icon bg-warning">
+                  <i class="fa fa-warning"></i>
+                </span>
+                <span class="m-left-xs">Server #2 not responding.</span>
+                <span class="time text-muted">Just now</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="notification-icon bg-success">
+                  <i class="fa fa-plus"></i>
+                </span>
+                <span class="m-left-xs">New user registration.</span>
+                <span class="time text-muted">2m ago</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="notification-icon bg-danger">
+                  <i class="fa fa-bolt"></i>
+                </span>
+                <span class="m-left-xs">Application error.</span>
+                <span class="time text-muted">5m ago</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="notification-icon bg-success">
+                  <i class="fa fa-usd"></i>
+                </span>
+                <span class="m-left-xs">2 items sold.</span>
+                <span class="time text-muted">1hr ago</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="notification-icon bg-success">
+                  <i class="fa fa-plus"></i>
+                </span>
+                <span class="m-left-xs">New user registration.</span>
+                <span class="time text-muted">1hr ago</span>
+              </a>
+            </li>
+            <li><a href="#">View all notifications</a></li>           
+          </ul>
+        </li>
+        <li class="profile dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            <strong><%= current_user.username %></strong>
+            <span><i class="fa fa-chevron-down"></i></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a class="clearfix" href="#">
+                <!-- <img src="img/user.jpg" alt="User Avatar"> -->
+                <%= image_tag("img/user.jpg") %>
+                <div class="detail">
+                  <strong><%= current_user.username %></strong>
+                  <p class="grey"><%= current_user.email %></p> 
+                </div>
+              </a>
+            </li>
+            <li>
+              <%= link_to(profile_path(current_user.username), remote: true, class: "main-link") do %>
+                <i class="fa fa-edit fa-lg"></i> Account Profile
+              <% end %>
+            </li>
+            <li><a tabindex="-1" href="gallery.html" class="main-link"><i class="fa fa-picture-o fa-lg"></i> Photo Gallery</a></li>
+            <li><a tabindex="-1" href="#" class="theme-setting"><i class="fa fa-cog fa-lg"></i> Setting</a></li>
+            <li class="divider"></li>
+            <li>
+              <%= link_to destroy_user_session_path, method: :delete, tabindex:"-1", class: "main-link logoutConfirm_open" do %><i class="fa fa-lock fa-lg"></i> Log out<% end %>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /top-nav-->
+    <aside class="fixed skin-1">        
+      <div class="sidebar-inner scrollable-sidebar">
+        <div class="size-toggle">
+          <a class="btn btn-sm" id="sizeToggle">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="btn btn-sm pull-right logoutConfirm_open"  href="#logoutConfirm">
+            <i class="fa fa-power-off"></i>
+          </a>
+        </div><!-- /size-toggle --> 
+        <div class="user-block clearfix">
+          <!-- <img src="img/user.jpg" alt="User Avatar"> -->
+          <%= image_tag("img/user.jpg") %>
+          <div class="detail">
+            <strong><%= current_user.username %></strong><span class="badge badge-danger bounceIn animation-delay4 m-left-xs">4</span>
+            <ul class="list-inline">
+              <li><a href="#">Profile</a></li>
+              <li><a href="#" class="no-margin">Inbox</a></li>
+            </ul>
+          </div>
+        </div><!-- /user-block -->
+        <div class="search-block">
+          <div class="input-group">
+            <input type="text" class="form-control input-sm" placeholder="search here...">
+            <span class="input-group-btn">
+              <button class="btn btn-default btn-sm" type="button"><i class="fa fa-search"></i></button>
+            </span>
+          </div><!-- /input-group -->
+        </div><!-- /search-block -->
+        <div class="main-menu">
+          <ul>
+            <li>
+              <%= link_to("#timeline",class: "navigation", data:{url:timeline_path}) do %>
+                <span class="menu-icon">
+                  <i class="fa fa-dashboard fa-lg"></i> 
+                </span>
+                <span class="text">
+                  Timeline
+                </span>
+                <span class="menu-hover"></span>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to("#articles",class: "navigation", data:{url:articles_path}) do %>
+                <span class="menu-icon">
+                  <i class="fa fa-file-text fa-lg"></i> 
+                </span>
+                <span class="text">
+                  Article
+                </span>
+                <span class="menu-hover"></span>
+              <% end %>
+              <!-- <a href="#" id="articles">
+                <span class="menu-icon">
+                  <i class="fa fa-file-text fa-lg"></i> 
+                </span>
+                <span class="text">
+                  Article
+                </span>
+                <span class="menu-hover"></span>
+              </a> -->
+            </li>
+            <li class="openable">
+              <a href="#">
+                <span class="menu-icon">
+                  <i class="fa fa-briefcase fa-lg"></i> 
+                </span>
+                <span class="text">
+                  Direktori Pajak
+                </span>
+                <i class="fa fa-angle-left pull-right"></i>
+                <span class="menu-hover"></span>
+              </a>
+              <ul class="submenu">
+                <!-- <li><a href="#"><span class="submenu-label fa fa-angle-double-right"> Peraturan Pajak</span></a></li> -->
+                <!-- <li><a href="#"><span class="submenu-label fa fa-angle-double-right"> Kurs Pajak</span></a></li> -->
+                <!-- <li><a href="#"><span class="submenu-label fa fa-angle-double-right"> KPP</span></a></li> -->
+                <li>
+                  <%= link_to("#consultants",class: "navigation", data:{url:consultants_path}) do %>
+                    <span class="submenu-label fa fa-angle-double-right"> Konsultan</span>
+                  <% end %>
+                </li>
+                <!-- <li><a href="#"><span class="submenu-label fa fa-angle-double-right"> Tax Center</span></a></li> -->
+                <!-- <li><a href="#"><span class="submenu-label fa fa-angle-double-right"> Brevet Pajak</span></a></li> -->
+              </ul>
+            </li>
+            <li>
+              <%= link_to("#questions",class: "navigation", data:{url:questions_path}) do %>
+                <span class="menu-icon">
+                  <i class="fa fa-flask fa-lg"></i> 
+                </span>
+                <span class="text">
+                  Tanya Pajak
+                </span>
+                <span class="menu-hover"></span>
+              <% end %>
+            </li>
+            <!-- <li>
+              <a href="#">
+                <span class="menu-icon">
+                  <i class="fa fa-calendar fa-lg"></i> 
+                </span>
+                <span class="text">
+                  Info Pajak
+                </span> -->
+                <!-- <span class="badge badge-danger bounceIn animation-delay6">4</span> -->
+                <span class="menu-hover"></span>
+             <!--  </a>
+            </li> -->
+            <!-- <li> -->
+              <%#= link_to("#payments",class: "navigation", data:{url:payments_path}) do %>
+                <!-- <span class="text">
+                  Lapor Pajak
+                </span>
+                <span class="menu-hover"></span> -->
+              <%# end %>
+            <!-- </li> -->
+            <% if current_user.is_admin? %>
+              <li>
+                <%= link_to("#imports",class: "navigation", data:{url:new_import_consultants_path}) do %>
+                  <span class="text">
+                    Import
+                  </span>
+                  <span class="menu-hover"></span>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to("#imports_rules",class: "navigation", data:{url:new_import_rules_path}) do %>
+                  <span class="text">
+                    Import Undang Undang
+                  </span>
+                  <span class="menu-hover"></span>
+                <% end %>
+              </li>
+            <% end %>
+          </ul>
+          <div class="alert alert-info">
+            First time using anakpajak.com. 
+          </div>
+        </div><!-- /main-menu -->
+      </div><!-- /sidebar-inner scrollable-sidebar -->
+    </aside>
+    <!-- Logout confirmation -->
+  <!-- <div class="custom-popup width-100" id="logoutConfirm">
+    <div class="padding-md">
+      <h4 class="m-top-none"> Do you want to logout?</h4>
+    </div>
+
+    <div class="text-center">
+      <a class="btn btn-success m-right-sm" href="login.html">Logout</a>
+      <a class="btn btn-danger logoutConfirm_close">Cancel</a>
+    </div>
+  </div> -->

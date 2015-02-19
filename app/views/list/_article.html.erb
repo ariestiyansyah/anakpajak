@@ -1,0 +1,20 @@
+<div class="panel blog-container">
+    <div class="panel-body">
+        <a class="image-wrapper image-zoom" href="/images/img/movie/preview1.jpg">
+            <%= image_tag("img/movie/preview1.jpg", alt: "Photo of Blog" ) %>
+            <div class="image-overlay"></div>   
+        </a>
+                                        
+        <h4><%= article.title %></h4>
+        <small class="text-muted">By <a href="#"><strong> <%= article.title %></strong></a> |  Post on <%= article.created_at.localtime.strftime("%B %d, %Y at %I:%M %p")  %> | <%= article.comments.size %> comments</small>
+        <p class="m-top-sm m-bottom-sm">
+            <%= raw(article.content[0..100])+"....." %>
+        </p>
+        <%= link_to( article_path(article), remote: true) do %>
+            <i class="fa fa-angle-double-right"></i> Continue reading
+        <% end %>
+        <span class="post-like text-muted tooltip-test" data-toggle="tooltip" data-original-title="I like this post!">
+            <i class="fa fa-heart"></i> <span class="like-count">8</span>
+        </span>
+    </div>
+</div>

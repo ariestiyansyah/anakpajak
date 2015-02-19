@@ -1,0 +1,32 @@
+<div class="col-md-4 col-sm-6">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <div class="clearfix">
+        <% question.tags.each do |tag| %>
+          <span class="label label-success pull-right"><%= tag.name %></span>
+        <% end %>
+        <%= link_to( question_path(question), remote: true, style:"font-size:14px") do %>
+          <%= question.title %>
+        <% end %><br>
+        <small class="text-muted">By 
+          <%= link_to( profile_path(question.user.username), remote: true, style:"font-size:14px") do %>
+            <strong> <%= question.user.username %></strong>
+          <% end %> | Post on <%= question.created_at.localtime.strftime("%B %d, %Y")  %>
+        </small>
+      </div>
+      <div class="seperator"></div>
+      <span class="detail"><p>
+      <%= raw question.content %></p>
+      </span>
+      <div class="panel-footer">
+        <p class="text-muted"><%= question.answers.size %> Jawaban</p>
+        <!-- <a href="#" class="pull-left m-right-sm"> 
+          <img src="img/user.jpg" class="img-circle" style="width:40px;" alt="User Avatar">
+        </a>
+        <a href="#" class="pull-left m-right-sm"> 
+          <img src="img/user.jpg" class="img-circle" style="width:40px;" alt="User Avatar">
+        </a> -->
+      </div>
+    </div>
+  </div>
+</div> <!-- /panel -->

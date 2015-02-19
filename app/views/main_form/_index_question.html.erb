@@ -1,0 +1,107 @@
+<div id="breadcrumb">
+  <ul class="breadcrumb">
+     <li><i class="fa fa-bar-chart-o"></i><a href="#questions"> Tanya Pajak</a></li>
+  </ul>
+</div>
+<div class="padding-md">
+  <div class="row">
+    <div class="col-lg-9">
+      <% @questions.each do |question| %>
+        <%= render partial: "list/question", locals: {question: question} %>   
+      <% end %>
+    </div>
+    <div class="col-lg-3">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div>
+            <%= link_to( new_question_path, remote: true, class: "btn btn-danger block") do %>
+              Buat Pertanyaan <i class="fa fa-arrow-circle-right"></i>
+            <% end %>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <div class="panel-title">Active Post</div>
+          </div>
+         <!-- <div class="list-group">
+            <div class="list-group-item">
+               <div class="media">
+                  <div class="pull-left">
+                     <span class="fa-stack fa-lg">
+                        <em class="fa fa-circle fa-stack-2x text-green"></em>
+                        <em class="fa fa-cloud-upload fa-stack-1x fa-inverse text-white"></em>
+                     </span>
+                  </div>
+                  <div class="media-body clearfix">
+                     <div class="media-heading text-green m0">NEW UPLOAD</div>
+                     <p class="m0">
+                        <small>New file <a href="#">expenses.xls</a> uploaded to the cloud</small>
+                     </p>
+                     <small>5 minutes ago</small>
+                  </div>
+               </div>
+            </div>
+            <div class="list-group-item">
+               <div class="media">
+                  <div class="pull-left">
+                     <span class="fa-stack fa-lg">
+                        <em class="fa fa-circle fa-stack-2x text-info"></em>
+                        <em class="fa fa-file-text-o fa-stack-1x fa-inverse text-white"></em>
+                     </span>
+                  </div>
+                  <div class="media-body clearfix">
+                     <div class="media-heading text-info m0">NEW DOCUMENT</div>
+                     <p class="m0">
+                        <small>New document <a href="#">profiles.doc</a> created</small>
+                     </p>
+                     <small>1 hour ago</small>
+                  </div>
+               </div>
+            </div>
+            <div class="list-group-item">
+               <div class="media">
+                  <div class="pull-left">
+                     <span class="fa-stack fa-lg">
+                        <em class="fa fa-circle fa-stack-2x text-danger"></em>
+                        <em class="fa fa-exclamation fa-stack-1x fa-inverse text-white"></em>
+                     </span>
+                  </div>
+                  <div class="media-body clearfix">
+                     <div class="media-heading text-danger m0">IMPORTANT MESSAGE</div>
+                     <p class="m0">
+                        <small>Mark sent you an important message. <a href="#">Read now</a>
+                        </small>
+                     </p>
+                     <small>3 hours ago</small>
+                  </div>
+               </div>
+            </div>
+            <div class="list-group-item">
+               <div class="media">
+                  <div class="pull-left">
+                     <span class="fa-stack fa-lg">
+                        <em class="fa fa-circle fa-stack-2x text-warning"></em>
+                        <em class="fa fa-clock-o fa-stack-1x fa-inverse text-white"></em>
+                     </span>
+                  </div>
+                  <div class="media-body clearfix">
+                     <div class="media-heading text-warning m0">MEETING</div>
+                     <p class="m0">
+                        <small>Robert added a new meeting. <a href="#" class="label label-info">JOIN</a>
+                        </small>
+                     </p>
+                     <small>yesterday</small>
+                  </div>
+               </div>
+            </div>
+          </div> -->
+          <div class="panel-footer clearfix">
+             <a href="#" class="pull-left">
+                <small>Load more</small>
+             </a>
+          </div>
+        </div>
+      </div>
+    </div><!-- /.row -->
+  </div><!-- /.padding-sm -->
+</div>

@@ -1,0 +1,17 @@
+<div class="timeline-item">
+    <div class="panel panel-default timeline-panel">
+      <div class="panel-heading">
+        <%= activity.owner.username %> created a new article
+        <small class="pull-right text-muted">
+          <i class="fa fa-clock-o"></i> <%= time_ago_in_words activity.created_at %> ago
+        </small>
+      </div>
+      <div class="panel-body">
+        <p>
+          <%= raw(activity.recipient.content[0..100])+"....." %>
+        </p>
+        <a class="btn btn-xs btn-default">Read more</a>
+        <a class="btn btn-xs btn-default"><i class="fa fa-reply"></i> Reply</a>
+      </div>
+    </div><!-- /panel -->
+</div><!-- /timeline-item -->

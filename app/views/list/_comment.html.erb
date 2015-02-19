@@ -1,0 +1,14 @@
+<li class="media">
+  <a class="pull-left" href="#">
+    <%= image_tag("img/user.jpg", class: "media-object img-circle", alt: "User Avatar", style: "width: 40px; height: 40px;") %>
+  </a>
+  <div class="media-body">
+    <div class="media-heading">
+      <a href="#"><%= comment.user.username %></a>
+      <small class="text-muted">
+        <%= comment.created_at.localtime.strftime("%B %d, %Y at %I:%M%p")  %>
+      </small>
+    </div>
+    <%= raw comment.comment %>
+  </div>
+</li>

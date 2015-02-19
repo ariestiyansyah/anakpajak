@@ -1,0 +1,38 @@
+          
+<% if @template == "timeline" %>
+<li>
+    <i class="pull-left thumbicon fa fa-pencil-square-o btn-pink no-hover"></i>
+    <div class="timeline-item">
+        <span class="time"><i class="fa fa-clock-o"></i> <%= time_ago_in_words activity.created_at %></span>
+        <h3 class="timeline-header"><a href="#"><%= activity.owner.username %></a> membuat article baru</h3>
+        <div class="timeline-body">
+            <%= raw(activity.recipient.content[0..100])+"....." %>
+        </div>
+        <div class='timeline-footer'>
+            <a href="<%= article_path(activity.recipient) %>" class="btn btn-primary btn-xs">Baca Selengkapnya</a>
+        </div>
+    </div>
+</li>
+<% end %>
+<% if @template == "profile"%>
+<div class="profile-activity clearfix">
+    <div>
+        <%= image_tag("avatar5.png", class: "pull-left", alt: "profiles's avatar")%>
+        <a class="user" href="#"> ariestiyansyah </a>
+        changed his profile photo.
+        <a href="#">Take a look</a>
+        <div class="time">
+            <i class="ace-icon fa fa-clock-o bigger-110"></i>
+            an hour ago
+        </div>
+    </div>
+    <div class="tools action-buttons">
+        <a href="#" class="blue">
+            <i class="ace-icon fa fa-pencil bigger-125"></i>
+        </a>
+        <a href="#" class="red">
+            <i class="ace-icon fa fa-times bigger-125"></i>
+        </a>
+    </div>
+</div>
+<% end %>

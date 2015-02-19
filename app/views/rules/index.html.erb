@@ -1,0 +1,32 @@
+<div class="wrapper row-offcanvas row-offcanvas-left">
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="left-side sidebar-offcanvas">
+                <!-- sidebar: style can be found in sidebar.less -->
+                <%= render "form/sidebar"%>
+                <!-- /.sidebar -->
+            </aside>
+            <!-- Right side column. Contains the navbar and content of the page -->
+            <aside class="right-side">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <div class="box box-primary">
+                                <div class="box-header">
+                                    <h3 class="box-title">Rule Pajak</h3>
+                                    <div class="box-tools pull-right">
+                                        <a href="<%= new_rule_path %>"><button class="btn btn-default pull-right"><i class="fa fa-plus"></i> Add item</button></a>
+                                        
+                                    </div>
+                                </div><!-- /.box-header -->
+                                
+                            </div><!-- /.box -->
+                </section>
+                <!-- Main content -->
+                <section class="content">
+                    <% @rules.each do |rule| %>
+                        <%= render partial: "list/rule", locals: {rule: rule} %>
+                    <% end %>
+                </section>
+            </aside><!-- /.right-side -->
+        </div><!-- ./wrapper -->
+  <%= render 'layouts/footer' %>        
+        

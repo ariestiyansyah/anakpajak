@@ -1,0 +1,100 @@
+<% content_for :style do %>
+  <%= stylesheet_link_tag "bootstrap.min" %>
+  <%= stylesheet_link_tag "font-awesome.min" %>
+  <%= stylesheet_link_tag "pace" %>
+  <%= stylesheet_link_tag "chosen/chosen.min" %>
+  <%= stylesheet_link_tag "datepicker" %>
+  <%= stylesheet_link_tag "bootstrap-timepicker" %>
+  <%= stylesheet_link_tag "slider" %>
+  <%= stylesheet_link_tag "jquery.tagsinput" %>
+  <%= stylesheet_link_tag "bootstrap-wysihtml5" %>
+  <%= stylesheet_link_tag 'dropzone/dropzone' %>
+  <%= stylesheet_link_tag "endless.min" %>
+  <%= stylesheet_link_tag "endless-skin" %>
+<% end %>
+<body class="overflow-hidden">
+    <!-- Overlay Div -->
+    <div id="overlay" class="transparent"></div>    
+    <div id="wrapper" class="preload">
+        <%= render 'layouts/user_top_navigation' %>
+        <div id="main-container">
+            <%= render 'main_form/show_question' %>
+        </div><!-- /main-container -->
+        <footer class="light">
+            <div class="row">
+                <div class="col-sm-3 padding-md">
+                    <p class="block">Anakpajak.com</p>
+                    <p><small>Social Tax Application created by Evone Studio, made by Rizky Ariestiyansyah and Aji Achmad Mustofa.</small></p>
+                </div><!-- /.col -->
+                <div class="col-sm-3 padding-md">
+                    <p class="block">Useful Links</p>
+                    <ul class="list-unstyled useful-link">
+                        <li>
+                            <a href="#">
+                                <small><i class="fa fa-chevron-right"></i> Blog</small>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <small><i class="fa fa-chevron-right"></i> Career</small>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <small><i class="fa fa-chevron-right"></i> Privacy Policy</small>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <small><i class="fa fa-chevron-right"></i> Terms and Conditions</small>
+                            </a>
+                        </li>
+                    </ul>
+                </div><!-- /.col -->
+                <div class="col-sm-3 padding-md">
+                    <p class="block">Stay Connect</p>
+                    <a href="#" class="social-connect tooltip-test facebook-hover pull-left m-right-xs" data-toggle="tooltip" data-original-title="Facebook"><i class="fa fa-facebook"></i></a>
+                    <a href="#" class="social-connect tooltip-test twitter-hover pull-left m-right-xs" data-toggle="tooltip" data-original-title="Twitter"><i class="fa fa-twitter"></i></a>
+                    <a href="#" class="social-connect tooltip-test google-plus-hover pull-left m-right-xs" data-toggle="tooltip" data-original-title="Google Plus"><i class="fa fa-google-plus"></i></a>
+                    <a href="#" class="social-connect tooltip-test rss-hover pull-left m-right-xs" data-toggle="tooltip" data-original-title="Rss feed"><i class="fa fa-rss"></i></a>
+                    <a href="#" class="social-connect tooltip-test tumblr-hover pull-left m-right-xs" data-toggle="tooltip" data-original-title="Tumblr"><i class="fa fa-tumblr"></i></a>
+                    <a href="#" class="social-connect tooltip-test dribbble-hover pull-left m-right-xs" data-toggle="tooltip" data-original-title="Dribbble"><i class="fa fa-dribbble"></i></a>
+                    <a href="#" class="social-connect tooltip-test linkedin-hover pull-left m-right-xs" data-toggle="tooltip" data-original-title="Linkedin"><i class="fa fa-linkedin"></i></a>
+                    <a href="#" class="social-connect tooltip-test pinterest-hover pull-left" data-toggle="tooltip" data-original-title="Pinterest"><i class="fa fa-pinterest"></i></a>
+                </div><!-- /.col -->
+                <div class="col-sm-3 padding-md">
+                    <p class="block">Contact Us</p>
+                    Email : anakpajak.com@gmail.com
+                    <div class="seperator"></div>
+                    <a class="btn btn-sm btn-info"><i class="fa fa-envelope"></i> Contact support</a>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </footer>
+    </div><!-- /wrapper -->
+    <%= render 'layouts/footer' %> 
+
+    <%= javascript_include_tag "jquery-1.10.2.min" %>
+    <%= javascript_include_tag "bootstrap.min" %>
+    <%= javascript_include_tag 'chosen.jquery.min' %> 
+    <%= javascript_include_tag 'jquery.maskedinput.min' %>  
+    <%= javascript_include_tag 'bootstrap-datepicker.min' %>  
+    <%= javascript_include_tag 'bootstrap-timepicker.min' %>  
+    <%= javascript_include_tag 'bootstrap-slider.min' %>  
+    <%= javascript_include_tag 'jquery.tagsinput.min' %>  
+    <%= javascript_include_tag 'wysihtml5-0.3.0.min' %> 
+    <%= javascript_include_tag 'uncompressed/bootstrap-wysihtml5' %>  
+    <%= javascript_include_tag 'dropzone.min' %>  
+    <%= javascript_include_tag 'modernizr.min' %>
+    <%= javascript_include_tag 'pace.min' %>
+    <%= javascript_include_tag 'jquery.popupoverlay.min' %>
+    <%= javascript_include_tag 'jquery.slimscroll.min' %>
+    <%= javascript_include_tag 'jquery.cookie.min' %>
+    <%= javascript_include_tag "endless/endless_form" %>
+    <%= javascript_include_tag "endless/endless" %>
+    <%= javascript_include_tag "uncompressed/bootstrap-wysihtml5" %>
+    <%= javascript_include_tag "dropzone.min" %>
+    <%= javascript_include_tag "uncompressed/holder" %>
+    <%= javascript_include_tag "jquery.gritter.min" %>
+    <%= javascript_include_tag "uncompressed/run_prettify" %>
+    
+  </body>

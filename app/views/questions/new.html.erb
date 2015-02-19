@@ -1,0 +1,52 @@
+<% content_for :style do %>
+  <%= stylesheet_link_tag "bootstrap.min" %>
+  <%= stylesheet_link_tag "font-awesome.min" %>
+  <%= stylesheet_link_tag "pace" %>
+  <%= stylesheet_link_tag "chosen/chosen.min" %>
+  <%= stylesheet_link_tag "datepicker" %>
+  <%= stylesheet_link_tag "bootstrap-timepicker" %>
+  <%= stylesheet_link_tag "slider" %>
+  <%= stylesheet_link_tag "jquery.tagsinput" %>
+  <%= stylesheet_link_tag "bootstrap-wysihtml5" %>
+  <%= stylesheet_link_tag 'dropzone/dropzone' %>
+  <%= stylesheet_link_tag "endless.min" %>
+  <%= stylesheet_link_tag "endless-skin" %>
+<% end %>
+
+  <body class="overflow-hidden">
+  <!-- Overlay Div -->
+  <div id="overlay" class="transparent"></div>  
+  <div id="wrapper" class="preload">
+    <%= render 'layouts/user_top_navigation' %>
+    <div id="main-container">
+      <%= render 'form/question' %>        
+    </div><!-- /main-container -->
+  </div><!-- /wrapper -->
+
+  <a href="" id="scroll-to-top" class="hidden-print"><i class="fa fa-chevron-up"></i></a>
+  
+  
+  
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  <%= javascript_include_tag "jquery-1.10.2.min" %>
+  <%= javascript_include_tag "bootstrap.min" %>
+  <%= javascript_include_tag 'chosen.jquery.min' %> 
+  <%= javascript_include_tag 'jquery.maskedinput.min' %>  
+  <%= javascript_include_tag 'bootstrap-datepicker.min' %>  
+  <%= javascript_include_tag 'bootstrap-timepicker.min' %>  
+  <%= javascript_include_tag 'bootstrap-slider.min' %>  
+  <%= javascript_include_tag 'jquery.tagsinput.min' %>  
+  <%= javascript_include_tag 'wysihtml5-0.3.0.min' %> 
+  <%= javascript_include_tag 'uncompressed/bootstrap-wysihtml5' %>  
+  <%= javascript_include_tag 'dropzone.min' %>  
+  <%= javascript_include_tag 'modernizr.min' %>
+  <%= javascript_include_tag 'pace.min' %>
+  <%= javascript_include_tag 'jquery.popupoverlay.min' %>
+  <%= javascript_include_tag 'jquery.slimscroll.min' %>
+  <%= javascript_include_tag 'jquery.cookie.min' %>
+  <%= javascript_include_tag "endless/endless_form" %>
+  <%= javascript_include_tag "endless/endless" %>
+  
+  </body>

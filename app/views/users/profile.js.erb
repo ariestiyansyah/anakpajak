@@ -1,0 +1,4 @@
+$( "div#main-container" ).hide( "slow", function () {
+  $( "div#main-container" ).html("<%= escape_javascript(render 'main_form/index_profile') %>").fadeIn().delay(2000);
+  // $( "div#main-container" ).show( "slow" );
+});

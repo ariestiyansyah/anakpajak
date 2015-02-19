@@ -1,0 +1,110 @@
+<% content_for :style do %>
+  <%= stylesheet_link_tag "bootstrap.min" %>
+  <%= stylesheet_link_tag "font-awesome.min" %>
+  <%= stylesheet_link_tag "pace" %>
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <%= stylesheet_link_tag "login" %>
+  <%= stylesheet_link_tag "endless.min" %>
+  <%= stylesheet_link_tag "endless-landing.min" %>
+<% end %>
+  <div class="container">
+    
+
+    <div class="omb_login">
+      <h3 class="omb_authTitle">Sign Up with</a></h3>
+    <div class="row omb_row-sm-offset-3 omb_socialButtons">
+          <div class="col-xs-4 col-sm-2">
+            <a href="<%= user_omniauth_authorize_path(:facebook) %>" class="btn btn-lg btn-block omb_btn-facebook">
+              <i class="fa fa-facebook visible-xs"></i>
+              <span class="hidden-xs">Facebook</span>
+            </a>
+          </div>
+          <div class="col-xs-4 col-sm-2">
+            <a href="<%= user_omniauth_authorize_path(:twitter) %>" class="btn btn-lg btn-block omb_btn-twitter">
+              <i class="fa fa-twitter visible-xs"></i>
+              <span class="hidden-xs">Twitter</span>
+            </a>
+          </div>  
+          <div class="col-xs-4 col-sm-2">
+            <a href="#" class="btn btn-lg btn-block omb_btn-google">
+              <i class="fa fa-google-plus visible-xs"></i>
+              <span class="hidden-xs">Google+</span>
+            </a>
+          </div>  
+    </div>
+
+    <div class="row omb_row-sm-offset-3 omb_loginOr">
+      <div class="col-xs-12 col-sm-6">
+        <hr class="omb_hrOr">
+        <span class="omb_spanOr">or</span>
+      </div>
+    </div>
+
+    <div class="row omb_row-sm-offset-3">
+      <div class="col-xs-12 col-sm-6">  
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), class: "omb_loginForm", autocomplete: "off") do |f| %>
+          <% if devise_error_messages! != "" %>
+            <div class="alert alert-warning alert-dismissable">
+              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+              <strong>Please Check Again !!!</strong>
+            </div>
+          <% end %>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-user"></i></span>
+            <%= f.text_field :username, autofocus: true, class: "form-control", placeholder: "Username" %>
+          </div>
+          <span class="help-block"></span>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+            <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "Email" %>
+          </div>
+          <span class="help-block"></span>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+            <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Password" %>
+          </div>
+          <span class="help-block"></span>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+            <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: "Retype Password" %>
+          </div>
+          <span class="help-block"></span>
+          <%#= f.submit "Sign up" %>
+          <button class="btn btn-lg btn-danger btn-block" type="submit">Sign Up</button>
+          <%#= render "users/shared/links" %>
+        <% end %>
+      </div>
+      </div>
+    <div class="row omb_row-sm-offset-3">
+      <div class="col-xs-12 col-sm-3">
+      </div>
+      <div class="col-xs-12 col-sm-3">
+        <p class="omb_forgotPwd">
+          Already have a account?<a href="<%= new_user_session_path %>"> Sign In</a>
+        </p>
+      </div>
+    </div>        
+  </div>
+</div> 
+  <%= javascript_include_tag "jquery-1.10.2.min" %>
+  <%= javascript_include_tag "bootstrap.min" %>
+  <%= javascript_include_tag "waypoints.min" %>
+  <%= javascript_include_tag 'jquery.localscroll.min' %>
+  <%= javascript_include_tag 'jquery.scrollTo.min' %>
+  <%= javascript_include_tag 'modernizr.min' %>
+  <%= javascript_include_tag 'pace.min' %>
+  <%= javascript_include_tag 'jquery.popupoverlay.min' %>
+  <%= javascript_include_tag 'jquery.slimscroll.min' %>
+  <%= javascript_include_tag 'jquery.cookie.min' %>
+  <%= javascript_include_tag "endless/endless" %>
+  <script>
+    $(function()  {
+      $('.animated-element').waypoint(function() {
+        
+        $(this).removeClass('no-animation');
+        
+      }, { offset: '70%' });
+      
+      $('.nav').localScroll({duration:800});
+    });
+  </script>

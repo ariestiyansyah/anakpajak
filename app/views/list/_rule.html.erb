@@ -1,0 +1,23 @@
+<div class="col-md-4">
+    <!-- Primary box -->
+    <div class="box box-solid box-primary">
+        <div class="box-header">
+            <h3 class="box-title"><%= rule.title %></h3>
+            <div class="box-tools pull-right">
+                <button class="btn btn-primary btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                <button class="btn btn-primary btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>
+            </div>
+        </div>
+        <div class="box-body">
+            Oleh: <code><%#= rule.user.username %></code>
+            <p>
+                <%#= raw(rule.content[0..100])+"....." %>
+            </p>
+        </div>
+        <div class="box-footer">
+        <a href="<%= rule_path(rule) %>" class="btn btn-primary">Baca Selengkapnya</a>
+        </div><!-- /.box-body -->
+    </div><!-- /.box -->
+</div><!-- /.col -->
+<%#= simple_format h(@result.join("").html_safe) %>
+<%= raw @result %>
