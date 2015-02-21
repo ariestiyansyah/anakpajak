@@ -15,6 +15,6 @@
 /tmp
 /log
 /config/database.yml
-/uploads
-/undang
+/public/uploads
+/public/undang
 Gemfile.lock
