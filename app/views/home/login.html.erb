@@ -3,7 +3,6 @@
   <%= stylesheet_link_tag "normalize" %>
   <%= stylesheet_link_tag "myhome" %>
 <% end %>
-<body>
 <div id="header">
   <div class="thick_header">
     <div class="container">
@@ -40,8 +39,6 @@
       </div>
     </div>
   </div>
-
-  
 </div>
 <div id="main">
   <div class="section gray section-intro">
@@ -52,86 +49,68 @@
             <div class="padder-20 hidden-xs"></div>
             <h1 class="title">Discover Tax Knowledge.</h1>
             <div class="sub-title">
-              anakpajak is social media to increase business trust and encourage tax information available to all people.           
+              anakpajak is social media to increase business trust and encourage tax information available to all people.      
             </div>
-  
-  <div class="row signup-row hidden-sm">
-  <div class="padder-20"></div>
-  <div class="col-xs-12 sub-title text-primary-color">
-    Made with <icon class="fa-heart-o"></icon> in Indonesia
-  </div>
-  <div class="padder-20"></div>
-  <div class="padder-10 visible-xs"></div>
-  <div class="padder-10"></div>
-</div>
-
-        </div>
-        <div class="col-sm-5 hidden-xs">
-          <%= image_tag("home.png", class: "img-responsive pull-right")%>
-        </div>
-      </div>
-
-    </div>
-  </div>
-<div class="section section-signup">
-  <div class="container">
-    <div class="row">
-      
-      <div class="col-sm-4">
-        <div class="notice">
-          
-            SIGN UP FOR FREE
-          
-        </div>
-        <div class="padder-10"></div>
-        <div class="small">
-          
-            We only need a few permissions and hate social spam too.
-          
-          <a href="#" class="text-underline">
-            Prefer email?
-          </a>
-        </div>
-      </div>
-      <div class="padder-30 visible-xs"></div>
-      
-      <div class="col-xs-12 col-sm-8">
-        <div class="row">
-          <a href="<%= user_omniauth_authorize_path(:facebook) %>">
-          <div class="col-md-6">
-            <button class="btn btn-fb btn-icon btn-block"
-              data-type="signup_button" data-channel-type="facebook">
-              <div class="sprite-facebook_btn icon"></div>
-              <span class="text">
-                SIGN IN WITH FACEBOOK
-              </span>
-            </button>
+            <div class="row signup-row hidden-sm">
+              <div class="padder-20"></div>
+              <div class="col-xs-12 sub-title text-primary-color">
+                Made with <icon class="fa-heart-o"></icon> in Indonesia
+              </div>
+              <div class="padder-20"></div>
+              <div class="padder-10 visible-xs"></div>
+              <div class="padder-10"></div>
+            </div>
           </div>
-          </a>
-          <div class="padder-10 visible-xs visible-sm"></div>
-          <a href="<%= user_omniauth_authorize_path(:twitter) %>">
-          <div class="col-md-6">
-            <button class="btn btn-twt btn-icon btn-block"
-              data-type="signup_button" data-channel-type="twitter">
-              <div class="sprite-twitter_btn icon"></div>
-              <span class="text">
-                SIGN IN WITH TWITTER
-              </span>
-            </button>
+          <div class="col-sm-5 hidden-xs">
+            <%= image_tag("home.png", class: "img-responsive pull-right")%>
           </div>
-          </a>
+        </div>
+    </div>
+  </div>
+  <div class="section section-signup">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="notice"> 
+              SIGN UP FOR FREE
+          </div>
+          <div class="padder-10"></div>
+          <div class="small">
+              We only need a few permissions and hate social spam too.
+            <a href="#" class="text-underline">
+              Prefer email?
+            </a>
+          </div>
+        </div>
+        <div class="padder-30 visible-xs"></div>
+        <div class="col-xs-12 col-sm-8">
+          <div class="row">
+            <a href="<%= user_omniauth_authorize_path(:facebook) %>">
+              <div class="col-md-6">
+                <button class="btn btn-fb btn-icon btn-block"
+                  data-type="signup_button" data-channel-type="facebook">
+                  <div class="sprite-facebook_btn icon"></div>
+                  <span class="text">
+                    SIGN IN WITH FACEBOOK
+                  </span>
+                </button>
+              </div>
+            </a>
+            <div class="padder-10 visible-xs visible-sm"></div>
+            <a href="<%= user_omniauth_authorize_path(:twitter) %>">
+              <div class="col-md-6">
+                <button class="btn btn-twt btn-icon btn-block"
+                  data-type="signup_button" data-channel-type="twitter">
+                  <div class="sprite-twitter_btn icon"></div>
+                  <span class="text">
+                    SIGN IN WITH TWITTER
+                  </span>
+                </button>
+              </div>
+            </a>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-    </div>
-    <div id="footer">
-<div class="thick_footer">
-  <div class="container">
-       <span>anakpajak</span>  &#169; 2014 <a href="https://evonestudio.com" target="_blank">Evone Studio</a>. ALL Rights Reserved ~ Terms & Policy ~ FAQ ~ About Us ~ Contact Us
-    </div>
-</div>
-    </div>
-  <%= javascript_include_tag "jquery-1.10.2.min" %>       
-  </body>

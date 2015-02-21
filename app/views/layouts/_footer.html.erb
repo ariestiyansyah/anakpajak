@@ -1,14 +1,52 @@
-<footer>
-      <div class="row">
-        <div class="col-sm-6">
-          <span class="footer-brand">
-            <strong class="text-danger">anakpajak.com</strong>
-          </span>
-          <p class="no-margin">
-            &copy; 2014 <strong>Evone Studio</strong>. ALL Rights Reserved. 
-          </p>
-        </div><!-- /.col -->
-      </div><!-- /.row-->
-    </footer>
-
+<% if user_signed_in? %>
+  <footer>
+    <div class="row">
+      <div class="col-sm-6">
+        <span class="footer-brand">
+          <strong class="text-danger">anakpajak.com</strong>
+        </span>
+        <p class="no-margin">
+          &copy; 2014 <strong>Evone Studio</strong>. ALL Rights Reserved. 
+        </p>
+      </div>
+    </div>
+  </footer>
   <a href="" id="scroll-to-top" class="hidden-print"><i class="fa fa-chevron-up"></i></a>
+  <%= javascript_include_tag "bootstrap.min" %>
+  <%= javascript_include_tag "chosen.jquery.min" %> 
+  <%= javascript_include_tag "jquery.maskedinput.min" %>  
+  <%= javascript_include_tag "bootstrap-datepicker.min" %>  
+  <%= javascript_include_tag "bootstrap-timepicker.min" %>  
+  <%= javascript_include_tag "bootstrap-slider.min" %>  
+  <%= javascript_include_tag "jquery.tagsinput.min" %>  
+  <%= javascript_include_tag "dropzone.min" %>  
+  <%= javascript_include_tag "modernizr.min" %>
+  <%= javascript_include_tag "pace.min" %>
+  <%= javascript_include_tag "jquery.popupoverlay.min" %>
+  <%= javascript_include_tag "jquery.slimscroll.min" %>
+  <%= javascript_include_tag "jquery.cookie.min" %>
+  <%= javascript_include_tag "endless/endless_form" %>
+  <%= javascript_include_tag "endless/endless" %> 
+  <script type="text/javascript">
+    $("a.navigation").on("click",function () {
+      var url = $(this).attr("data-url");
+      $.ajax({                                      
+        url   : url,
+        type  : "GET"
+      });
+    });
+    if (location.hash !=""){
+      href = location.hash;
+      $("a.navigation[href='"+href+"']").trigger("click");
+    }
+  </script>
+<% else %>
+  <div id="footer">
+    <div class="thick_footer">
+      <div class="container">
+         <span>anakpajak</span>  &#169; 2014 <a href="https://evonestudio.com" target="_blank">Evone Studio</a>. ALL Rights Reserved ~ Terms & Policy ~ FAQ ~ About Us ~ Contact Us
+      </div>
+    </div>
+  </div>
+  <%#= javascript_include_tag "jquery-1.10.2.min" %>
+<% end %>
