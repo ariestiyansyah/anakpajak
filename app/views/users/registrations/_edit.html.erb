@@ -17,6 +17,12 @@
       </div><!-- /.col -->
     </div><!-- /form-group -->
     <div class="form-group">
+      <%= f.label :description, class: "control-label col-md-2" %>
+      <div class="col-md-10">
+        <%= f.text_area :description, autofocus: true, class: "form-control input-sm" %>
+      </div><!-- /.col -->
+    </div>
+    <div class="form-group">
       <%= f.label :email, class: "control-label col-md-2" %>
       <div class="col-md-10">
         <%= f.email_field :email, autofocus: true, class: "form-control input-sm" %>
